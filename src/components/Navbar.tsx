@@ -5,8 +5,7 @@ import NavbarDropdown from "./NavbarDropdown";
 const PATHS = [
     {path: "/", name: "Home"},
     {path: "/projects", name: "Projects"},
-    {path: "/gists", name: "Gists"},
-    {path: "/socials", name: "Contact me"},
+    {path: "/gists", name: "Gists"}
 ];
 
 export default function Navbar() {
@@ -16,10 +15,14 @@ export default function Navbar() {
                 <NavbarDropdown paths={PATHS}/>
                 <Link href="/">
                     <div className="flex items-center gap-2">
-                        <Image src="/avatar.jpg" width="32" height="32" className="h-8 w-8 rounded-full md:h-10 md:w-10"
-                               alt="Soothe Logo"/>
                         <h1 className="text-lg font-bold text-slate-300 transition-all duration-300 hover:text-slate-200 md:text-xl ml-2">
-                            kewldan
+                            <p className="inline font-light text-gray-400">
+                                dev://
+                            </p>
+                            <p className="inline font-bold">
+                                kewldan
+                            </p>
+
                         </h1>
                     </div>
                 </Link>
@@ -28,7 +31,7 @@ export default function Navbar() {
                         <Link
                             key={path}
                             href={path}
-                            className="hidden rounded px-2 py-1.5 transition-all duration-300 hover:text-slate-300 md:block"
+                            className="hidden rounded px-2 py-1.5 transition-all duration-300 hover:text-slate-300 md:block ${pathname === '/' ? 'active' : ''}"
                         >
                             {name}
                         </Link>
@@ -36,9 +39,9 @@ export default function Navbar() {
                     <a
                         href="/github"
                         target="_blank"
-                        className="rounded bg-[#284475] px-3 py-1.5 text-sm font-medium text-slate-300 transition-all duration-300 hover:bg-[#0972ca] md:text-base"
+                        className="rounded bg-blue-500 px-3 py-1.5 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-blue-300 md:text-base"
                     >
-                        <Image src="/github.svg" alt="d" width="16" height="16" className="inline"/>
+                        <Image src="/github.svg" alt="d" width="20" height="20" className="inline"/>
 
                         <p className="ml-2 inline">
                             Github
