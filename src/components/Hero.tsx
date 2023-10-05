@@ -3,12 +3,15 @@ import Image from "next/image";
 export default function Hero() {
     return (
         <div className="">
-            <div className="flex flex-row items-center justify-between">
-                <Image src="/avatar.jpg" alt="alt" width="400" height="100" className="rounded-2xl m-3"/>
+            <div className="flex flex-row items-center justify-between flex-wrap">
+                <div className="flex flex-col items-center">
+                    <Image src="/avatar.jpg" alt="alt" width="400" height="100" className="rounded-2xl m-3"/>
+                </div>
+
                 <div className="flex flex-col items-center justify-between">
                     <h1 className="text-3xl font-bold">👋 Hi there</h1>
-                    <p className="mt-10 text-xl">
-                        My name in Daniil. I&apos;m a 16 year-old developer from Saint-Petersburg, Russia. <br/>
+                    <p className="mt-10 text-xl max-w-xl">
+                        My name is Daniil. I&apos;m a 16 year-old developer from Saint-Petersburg, Russia.
 
                         Currently, I work as a indie dev. And focusing on my own projects and POCs
                     </p>
