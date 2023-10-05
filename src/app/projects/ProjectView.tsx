@@ -1,11 +1,13 @@
-import Image from "next/image";
 import React from "react";
 import LanguageTag from "@/components/LanguageTag";
+import Tag from "@/app/projects/Tags";
+import Image from "next/image"
 
-export default function ProjectView({children, title, image}: {
+export default function ProjectView({children, title, image, tags}: {
     children: React.ReactNode,
     title: string,
-    image: string
+    image: string | undefined,
+    tags: Tag[]
 }) {
     return (
         <div
@@ -18,14 +20,20 @@ export default function ProjectView({children, title, image}: {
                 </div>
 
                 <div className="flex flex-row items-center justify-center">
-                    <LanguageTag name="C++" color="bg-red-500"/>
-                    <LanguageTag name="Gayme" color="bg-blue-500"/>
-                    <LanguageTag name="C++" color="bg-green-500"/>
+                    {tags.map(tag => (
+                        <React.Fragment key={tag.name}>
+                            <LanguageTag tag={tag}/>
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
-            <Image src={image} alt="Logical System" width="600" height="1" className="mt-4 rounded-2xl"/>
+            {
+                image ? (<Image src={image} alt={title} width="600" height="1" className="mt-4 rounded-2xl"/>) : (
+                    <h1></h1>)
+            }
 
-            <div className="p-4 max-w-xl">
+
+            <div className="p-4 max-w-xl mt-4 rounded-2xl">
                 {children}
             </div>
         </div>
