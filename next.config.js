@@ -17,6 +17,11 @@ const nextConfig = {
                 source: "/vk",
                 destination: "https:/vk.com/kewldan",
                 permanent: true
+            },
+            {
+                source: "/stack-overflow",
+                destination: "https://stackoverflow.com/users/15113869/kewldan",
+                permanent: true
             }
         ];
     },

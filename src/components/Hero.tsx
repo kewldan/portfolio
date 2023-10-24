@@ -1,38 +1,33 @@
 import Image from "next/image";
+import {FaGithub, FaStackOverflow, FaTelegram} from "react-icons/fa6";
 
 export default function Hero() {
     return (
-        <div className="">
+        <div>
             <div className="flex flex-row items-center justify-between flex-wrap">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center grow">
                     <Image src="/avatar.jpg" alt="alt" width="400" height="100" className="rounded-2xl m-3"/>
                 </div>
 
-                <div className="flex flex-col items-center justify-between">
-                    <h1 className="text-3xl font-bold">👋 Hi there</h1>
-                    <p className="mt-10 text-xl max-w-xl">
+                <div className="flex flex-col items-center grow">
+                    <h1 className="text-5xl font-bold">👋 Hi there</h1>
+                    <span className="mt-10 text-xl max-w-xl">
                         My name is Daniil. I&apos;m a 16 year-old developer from Saint-Petersburg, Russia.
 
                         Currently, I work as a indie dev. And focusing on my own projects and POCs
-                    </p>
+                    </span>
                 </div>
             </div>
             <div className="my-8 h-1 rounded bg-gray-300"></div>
-            <div className="flex flex-row items-center justify-center">
-                <a href="/vk">
-                    <Image src="/socials/vk.svg" width="40" height="40"
-                           className="h-8 w-8 rounded-full md:h-10 md:w-10 m-3 hover:scale-105 transition-all"
-                           alt="VK"/>
+            <div className="flex flex-row items-center justify-center gap-x-4">
+                <a href="/telegram">
+                    <FaTelegram size={40}/>
                 </a>
                 <a href="/github">
-                    <Image src="/socials/github.svg" width="40" height="40"
-                           className="h-8 w-8 rounded-full md:h-10 md:w-10 m-3 hover:scale-105 transition-all"
-                           alt="Github"/>
+                    <FaGithub size={40}/>
                 </a>
                 <a href="/stack-overflow">
-                    <Image src="/socials/stack-overflow.svg" width="40" height="40"
-                           className="h-8 w-8 rounded-full md:h-10 md:w-10 m-3 hover:scale-105 transition-all"
-                           alt="Stack overflow"/>
+                    <FaStackOverflow size={40}/>
                 </a>
             </div>
         </div>

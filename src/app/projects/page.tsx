@@ -1,53 +1,113 @@
-import ProjectCard from "@/app/projects/ProjectCard";
-import Tags from "./Tags";
+import ProjectCard, {
+    CXX,
+    ENG,
+    getContactConnection,
+    getGithubConnection,
+    getItchConnection,
+    getOpenConnection,
+    getTelegramConnection,
+    PYTHON,
+    RUS,
+    TS
+} from "@/app/projects/ProjectCard";
+import ProjectCategory from "@/app/projects/ProjectCategory";
+import React from "react";
 
 export default function Projects() {
     return (
         <main className="flex flex-col items-center gap-y-2 pb-4">
-            <h1 className="text-5xl font-bold py-6">🎮 Games</h1>
+            <ProjectCategory title={'🎮 Games'}>
+                <ProjectCard image="/projects/LogicalSystem.gif" title="Logical System"
+                             connections={[getItchConnection('https://kewldan.itch.io/logical-system'), getGithubConnection('https://github.com/kewldan/LogicalSystemRemaster')]}
+                             localization={ENG}
+                             language={CXX}>
+                    In this game, you can create any electrical circuits. This game is Turing complete. I was able to
+                    create a full 8 bit gated adder in half an hour!
 
-            <ProjectCard image="/projects/LogicalSystem.gif" title="Logical System"
-                         tags={[Tags.CXX, Tags.Game, Tags.GLSL, Tags.OpenGL]}>
-                In this game, you can create any electrical circuits. This game is Turing complete. I was able to
-                create a full 8 bit gated adder in half an hour!
+                    The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT
+                    and more.
+                </ProjectCard>
 
-                The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT
-                and more.
-            </ProjectCard>
+                <ProjectCard image="/projects/VulkanEngine.gif" title="Vulkan Engine" language={CXX}
+                             connections={[getGithubConnection('https://github.com/kewldan/VulkanEngine')]}
+                             localization={ENG}>
+                    My own Vulkan Engine for 3d games
+                </ProjectCard>
 
-            <ProjectCard image="/projects/VulkanEngine.gif" title="Vulkan Engine"
-                         tags={[Tags.CXX, Tags.Vulkan, Tags.Library]}>
-                My own Vulkan Engine WIP
-            </ProjectCard>
+                <ProjectCard image="/projects/PingPong.gif" title="PingPong" language={CXX}
+                             connections={[getGithubConnection('https://github.com/kewldan/ConsolePong')]}
+                             localization={ENG}>
+                    In console ASCII ping pong in c++ made with WinAPI
+                </ProjectCard>
+            </ProjectCategory>
 
-            <ProjectCard image="/projects/PingPong.gif" title="PingPong"
-                         tags={[Tags.CXX, Tags.SFML, Tags.Software]}>
-                In console ASCII ping pong in c++ with WinApi
-            </ProjectCard>
+            <ProjectCategory title={'💽 Software'}>
+                <ProjectCard image="/projects/SummerTimer.gif" title="SummerTimer" language={CXX}
+                             connections={[getGithubConnection('https://github.com/kewldan/SummerTimer')]}
+                             localization={RUS}>
+                    A programme made as a joke from a video I saw in TikTok. It counts down to the beginning of summer
+                    from the beginning of autumn
+                </ProjectCard>
 
-            <h1 className="text-5xl font-bold py-6">💽 Software</h1>
+                <ProjectCard image="/projects/PassportChecker.png" title="PassportChecker"
+                             connections={[getContactConnection()]}
+                             language={CXX} localization={RUS}>
+                    Software for working with passports of the Russian Federation. It can check passports for validity,
+                    obtain TIN (ИНН) and export data to a file
+                </ProjectCard>
+            </ProjectCategory>
 
-            <ProjectCard image="/projects/SummerTimer.gif" title="SummerTimer"
-                         tags={[Tags.CXX, Tags.SFML, Tags.Software]}>
-                In this game, you can create any electrical circuits. This game is Turing complete. I was able to
-                create a full 8 bit gated adder in half an hour!
+            <ProjectCategory title={'🤖 Bots'}>
+                <ProjectCard image="/projects/SolverBot.png" title="SolverBot" language={PYTHON}
+                             connections={[getTelegramConnection('https://t.me/kwld_solver_bot')]}
+                             localization={RUS}>
+                    Bot for solving РЕШУ ОГЭ/ВПР/ЕГЭ tests
+                </ProjectCard>
 
-                The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT
-                and more
-            </ProjectCard>
+                <ProjectCard image="/projects/ShopBot.png" title="ShopBot" language={PYTHON}
+                             localization={RUS} connections={[getTelegramConnection('https://t.me/FreeShopPain_Bot')]}>
+                    Bot for selling digital goods
+                </ProjectCard>
 
-            <h1 className="text-5xl font-bold py-6">📕 Libraries</h1>
+                <ProjectCard image="/projects/PassportCheckerBot.png" title="PassportCheckerBot"
+                             localization={RUS}
+                             language={CXX}
+                             connections={[getTelegramConnection('https://t.me/passport_validate_bot')]}>
+                    Bot-mirror for PassportChecker
+                </ProjectCard>
+            </ProjectCategory>
 
-            <ProjectCard title="AAIO" tags={[Tags.Python, Tags.Library]} image={undefined}>
-                This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described and
-                all types are explicitly defined. The library does not handle any exceptions, so be careful. Methods
-                that create requests to aaio.io return a pydantic's models for each response
-            </ProjectCard>
+            <ProjectCategory title={'🌐 Web'}>
+                <ProjectCard image="/projects/Gigachat.png" title="Gigachat" language={TS}
+                             connections={[getOpenConnection('http://ylous.keenetic.link:4000/'), getGithubConnection('https://github.com/khokhden/giga-chat')]}
+                             localization={RUS}>
+                    Global online chat
+                </ProjectCard>
 
-            <ProjectCard title="MinecraftServerCore" tags={[Tags.CXX, Tags.Library]}
-                         image="/projects/MinecraftServerCore.jpg">
-                Minecraft server backend implementation from scratch WIP
-            </ProjectCard>
+                <ProjectCard image="/projects/GradeApp.gif" title="GradeApp" language={TS}
+                             connections={[getTelegramConnection('https://t.me/grade_app_bot')]}
+                             localization={RUS}>
+                    Shoes store in Telegram Web App
+                </ProjectCard>
+            </ProjectCategory>
+
+            <ProjectCategory title={'📕 Libraries'}>
+                <ProjectCard title="AAIO" language={PYTHON}
+                             localization={ENG} connections={[getGithubConnection('https://github.com/kewldan/AAIO')]}
+                             image={'/projects/AAIO.png'}>
+                    This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
+                    and
+                    all types are explicitly defined. The library does not handle any exceptions, so be careful. Methods
+                    that create requests to aaio.io return a pydantic&apos;s models for each response
+                </ProjectCard>
+
+                <ProjectCard title="MinecraftServerCore" language={CXX}
+                             localization={ENG}
+                             connections={[getGithubConnection('https://github.com/kewldan/MinecraftServerCore')]}
+                             image="/projects/MinecraftServerCore.jpg">
+                    Minecraft server backend implementation from scratch WIP
+                </ProjectCard>
+            </ProjectCategory>
         </main>
     )
 }

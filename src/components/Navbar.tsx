@@ -4,13 +4,12 @@ import {FaGithub} from "react-icons/fa6";
 
 const PATHS = [
     {path: "/", name: "Home"},
-    {path: "/projects", name: "Projects"},
-    {path: "/gists", name: "Gists"}
+    {path: "/projects", name: "Projects"}
 ];
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-20 flex justify-center py-3">
+        <header className="sticky top-0 z-20 flex justify-center py-3 bg-inherit">
             <div className="mx-4 flex w-full max-w-7xl items-center justify-center text-left">
                 <NavbarDropdown paths={PATHS}/>
                 <Link href="/">
@@ -39,7 +38,7 @@ export default function Navbar() {
                     <a
                         href="/github"
                         target="_blank"
-                        className="rounded bg-blue-500 px-3 py-1.5 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-blue-300 md:text-base flex flex-row"
+                        className="rounded bg-primary px-3 py-1.5 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-blue-300 md:text-base flex flex-row"
                     >
                         <FaGithub size={26}/>
 
