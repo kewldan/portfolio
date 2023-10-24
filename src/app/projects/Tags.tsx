@@ -11,9 +11,13 @@ export default class Tag {
     static JS: Tag = {name: 'JavaScript', color: 'bg-[#f1e05a]'}
     static GLSL: Tag = {name: 'GLSL', color: 'bg-red-500'}
     static TS: Tag = {name: 'TypeScript', color: 'bg-[#3178c6]'}
+
     static Vulkan: Tag = {name: 'Vulkan', color: 'bg-red-500'}
     static OpenGL: Tag = {name: 'OpenGL', color: 'bg-red-500'}
+    static SFML: Tag = {name: 'SFML', color: 'bg-red-500'}
+
     static Web: Tag = {name: 'Web', color: 'bg-red-500'}
     static Game: Tag = {name: 'Game', color: 'bg-red-500'}
     static Library: Tag = {name: 'Library', color: 'bg-red-500'}
+    static Software: Tag = {name: 'Software', color: 'bg-red-500'}
 }
