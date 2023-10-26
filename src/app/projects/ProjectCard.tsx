@@ -4,6 +4,7 @@ import {BiLockAlt} from "react-icons/bi";
 import {FaGithub, FaItchIo, FaLink, FaTelegram} from "react-icons/fa6";
 import {GB, RU} from "country-flag-icons/react/3x2";
 import {TbBrandCpp, TbBrandPython, TbBrandTypescript} from "react-icons/tb";
+import {SiDocsdotrs} from "react-icons/si";
 
 export const RUS = (<div className='tooltip' data-tip='Russian only'><RU className='w-8 rounded-sm'/></div>);
 export const ENG = (<div className='tooltip' data-tip='English only'><GB className='w-8 rounded-sm'/></div>);
@@ -12,49 +13,22 @@ export const PYTHON = (<div className='tooltip' data-tip='Python 3'><TbBrandPyth
 export const CXX = (<div className='tooltip' data-tip='C++ 20'><TbBrandCpp size={26}/></div>)
 export const TS = (<div className='tooltip' data-tip='TypeScript'><TbBrandTypescript size={26}/></div>)
 
-export function getGithubConnection(link: string) {
+function getConnection(link: string, icon: React.ReactNode, text: string) {
     return (
-        <a className='btn grow btn-primary' href={link}>
-            <FaGithub size={26}/>
-            Github
+        <a className='btn w-full btn-primary' href={link}>
+            {icon}
+            {text}
         </a>
     )
 }
 
-export function getItchConnection(link: string) {
-    return (
-        <a className='btn grow btn-primary' href={link}>
-            <FaItchIo size={26}/>
-            Itch.IO
-        </a>
-    )
-}
-
-export function getContactConnection() {
-    return (
-        <a className='btn grow btn-primary' href='/telegram'>
-            <BiLockAlt size={26}/>
-            Contact me
-        </a>
-    )
-}
-
-export function getTelegramConnection(link: string) {
-    return (
-        <a className='btn grow btn-primary' href={link}>
-            <FaTelegram size={26}/>
-            Telegram
-        </a>
-    )
-}
-
-export function getOpenConnection(link: string) {
-    return (
-        <a className='btn grow btn-primary' href={link}>
-            <FaLink size={26}/>
-            Open
-        </a>
-    )
+export const connections = {
+    github: (link: string) => getConnection(link, <FaGithub size={26}/>, 'Github'),
+    itch: (link: string) => getConnection(link, <FaItchIo size={26}/>, 'Itch.io'),
+    contact: getConnection('/telegram', <BiLockAlt size={26}/>, 'Contact me'),
+    telegram: (link: string) => getConnection(link, <FaTelegram size={26}/>, 'Telegram'),
+    open: (link: string) => getConnection(link, <FaLink size={26}/>, 'Open'),
+    docs: (link: string) => getConnection(link, <SiDocsdotrs size={26}/>, 'Docs')
 }
 
 export default function ProjectCard({children, title, language, localization, image, connections}: {
@@ -87,8 +61,10 @@ export default function ProjectCard({children, title, language, localization, im
             {children}
 
             <div className='flex flex-row items-center gap-x-2 w-full'>
-                {connections.map((connection) =>
-                    connection
+                {connections.map((connection, index) =>
+                    <div key={`${title}-connection-${index}`} className='grow w-full'>
+                        {connection}
+                    </div>
                 )}
             </div>
         </div>

@@ -1,15 +1,4 @@
-import ProjectCard, {
-    CXX,
-    ENG,
-    getContactConnection,
-    getGithubConnection,
-    getItchConnection,
-    getOpenConnection,
-    getTelegramConnection,
-    PYTHON,
-    RUS,
-    TS
-} from "@/app/projects/ProjectCard";
+import ProjectCard, {connections, CXX, ENG, PYTHON, RUS, TS} from "@/app/projects/ProjectCard";
 import ProjectCategory from "@/app/projects/ProjectCategory";
 import React from "react";
 
@@ -18,7 +7,7 @@ export default function Projects() {
         <main className="flex flex-col items-center gap-y-2 pb-4">
             <ProjectCategory title={'🎮 Games'}>
                 <ProjectCard image="/projects/LogicalSystem.gif" title="Logical System"
-                             connections={[getItchConnection('https://kewldan.itch.io/logical-system'), getGithubConnection('https://github.com/kewldan/LogicalSystemRemaster')]}
+                             connections={[connections.itch('https://kewldan.itch.io/logical-system'), connections.github('https://github.com/kewldan/LogicalSystemRemaster')]}
                              localization={ENG}
                              language={CXX}>
                     In this game, you can create any electrical circuits. This game is Turing complete. I was able to
@@ -29,13 +18,13 @@ export default function Projects() {
                 </ProjectCard>
 
                 <ProjectCard image="/projects/VulkanEngine.gif" title="Vulkan Engine" language={CXX}
-                             connections={[getGithubConnection('https://github.com/kewldan/VulkanEngine')]}
+                             connections={[connections.github('https://github.com/kewldan/VulkanEngine')]}
                              localization={ENG}>
                     My own Vulkan Engine for 3d games
                 </ProjectCard>
 
                 <ProjectCard image="/projects/PingPong.gif" title="PingPong" language={CXX}
-                             connections={[getGithubConnection('https://github.com/kewldan/ConsolePong')]}
+                             connections={[connections.github('https://github.com/kewldan/ConsolePong')]}
                              localization={ENG}>
                     In console ASCII ping pong in c++ made with WinAPI
                 </ProjectCard>
@@ -43,14 +32,14 @@ export default function Projects() {
 
             <ProjectCategory title={'💽 Software'}>
                 <ProjectCard image="/projects/SummerTimer.gif" title="SummerTimer" language={CXX}
-                             connections={[getGithubConnection('https://github.com/kewldan/SummerTimer')]}
+                             connections={[connections.github('https://github.com/kewldan/SummerTimer')]}
                              localization={RUS}>
                     A programme made as a joke from a video I saw in TikTok. It counts down to the beginning of summer
                     from the beginning of autumn
                 </ProjectCard>
 
                 <ProjectCard image="/projects/PassportChecker.png" title="PassportChecker"
-                             connections={[getContactConnection()]}
+                             connections={[connections.contact]}
                              language={CXX} localization={RUS}>
                     Software for working with passports of the Russian Federation. It can check passports for validity,
                     obtain TIN (ИНН) and export data to a file
@@ -59,33 +48,33 @@ export default function Projects() {
 
             <ProjectCategory title={'🤖 Bots'}>
                 <ProjectCard image="/projects/SolverBot.png" title="SolverBot" language={PYTHON}
-                             connections={[getTelegramConnection('https://t.me/kwld_solver_bot')]}
+                             connections={[connections.telegram('https://t.me/kwld_solver_bot')]}
                              localization={RUS}>
                     Bot for solving РЕШУ ОГЭ/ВПР/ЕГЭ tests
                 </ProjectCard>
 
                 <ProjectCard image="/projects/ShopBot.png" title="ShopBot" language={PYTHON}
-                             localization={RUS} connections={[getTelegramConnection('https://t.me/FreeShopPain_Bot')]}>
+                             localization={RUS} connections={[connections.telegram('https://t.me/FreeShopPain_Bot')]}>
                     Bot for selling digital goods
                 </ProjectCard>
 
                 <ProjectCard image="/projects/PassportCheckerBot.png" title="PassportCheckerBot"
                              localization={RUS}
                              language={CXX}
-                             connections={[getTelegramConnection('https://t.me/passport_validate_bot')]}>
+                             connections={[connections.telegram('https://t.me/passport_validate_bot')]}>
                     Bot-mirror for PassportChecker
                 </ProjectCard>
             </ProjectCategory>
 
             <ProjectCategory title={'🌐 Web'}>
                 <ProjectCard image="/projects/Gigachat.png" title="Gigachat" language={TS}
-                             connections={[getOpenConnection('http://ylous.keenetic.link:4000/'), getGithubConnection('https://github.com/khokhden/giga-chat')]}
+                             connections={[connections.open('http://ylous.keenetic.link:4000/'), connections.github('https://github.com/khokhden/giga-chat')]}
                              localization={RUS}>
                     Global online chat
                 </ProjectCard>
 
                 <ProjectCard image="/projects/GradeApp.gif" title="GradeApp" language={TS}
-                             connections={[getTelegramConnection('https://t.me/grade_app_bot')]}
+                             connections={[connections.telegram('https://t.me/grade_app_bot')]}
                              localization={RUS}>
                     Shoes store in Telegram Web App
                 </ProjectCard>
@@ -93,7 +82,8 @@ export default function Projects() {
 
             <ProjectCategory title={'📕 Libraries'}>
                 <ProjectCard title="AAIO" language={PYTHON}
-                             localization={ENG} connections={[getGithubConnection('https://github.com/kewldan/AAIO')]}
+                             localization={ENG}
+                             connections={[connections.docs('/projects/aaio'), connections.github('https://github.com/kewldan/AAIO')]}
                              image={'/projects/AAIO.png'}>
                     This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
                     and
@@ -103,7 +93,7 @@ export default function Projects() {
 
                 <ProjectCard title="MinecraftServerCore" language={CXX}
                              localization={ENG}
-                             connections={[getGithubConnection('https://github.com/kewldan/MinecraftServerCore')]}
+                             connections={[connections.github('https://github.com/kewldan/MinecraftServerCore')]}
                              image="/projects/MinecraftServerCore.jpg">
                     Minecraft server backend implementation from scratch WIP
                 </ProjectCard>
