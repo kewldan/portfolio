@@ -28,6 +28,18 @@ export default function Projects() {
                              localization={ENG}>
                     In console ASCII ping pong in c++ made with WinAPI
                 </ProjectCard>
+
+                <ProjectCard image="/projects/Vulkan2D.png" title="VulkanEngine 2D" language={CXX}
+                             connections={[]}
+                             localization={ENG}>
+                    Vulkan Engine port focused for 2D game development
+                </ProjectCard>
+
+                <ProjectCard image="/projects/ShooterGame.jpg" title="ShooterGame" language={CXX}
+                             connections={[]}
+                             localization={ENG}>
+                    Vulkan Engine port focused for 2D game development
+                </ProjectCard>
             </ProjectCategory>
 
             <ProjectCategory title={'💽 Software'}>
@@ -43,6 +55,12 @@ export default function Projects() {
                              language={CXX} localization={RUS}>
                     Software for working with passports of the Russian Federation. It can check passports for validity,
                     obtain TIN (ИНН) and export data to a file
+                </ProjectCard>
+
+                <ProjectCard image="/projects/PassportOCR.png" title="PassportOCR"
+                             connections={[connections.contact]}
+                             language={CXX} localization={RUS}>
+                    Software for OCR passports of the Russian Federation
                 </ProjectCard>
             </ProjectCategory>
 
@@ -63,6 +81,12 @@ export default function Projects() {
                              language={CXX}
                              connections={[connections.telegram('https://t.me/passport_validate_bot')]}>
                     Bot-mirror for PassportChecker
+                </ProjectCard>
+                <ProjectCard image="/projects/AllSms.png" title="AllSMS"
+                             localization={RUS}
+                             language={PYTHON}
+                             connections={[connections.telegram('https://t.me/allsmska_bot')]}>
+                    Bot for rent temp phone numbers for registration
                 </ProjectCard>
             </ProjectCategory>
 
