@@ -3,11 +3,11 @@ import {FaGithub, FaNetworkWired, FaStackOverflow, FaTelegram} from "react-icons
 import {SiNextdotjs, SiTelegram, SiUnrealengine} from "react-icons/si";
 
 const focuses = [
-    {icon: <SiUnrealengine size={26}/>, name: 'Unreal Engine 5', value: 0},
-    {icon: <SiNextdotjs size={26}/>, name: 'Next.JS', value: 40},
     {icon: <SiTelegram size={26}/>, name: 'Telegram web apps', value: 67},
-    {icon: <FaNetworkWired size={26}/>, name: 'Highly loaded networks', value: 3}
-].toSorted((a, b) => -a.value + b.value)
+    {icon: <SiNextdotjs size={26}/>, name: 'Next.JS', value: 40},
+    {icon: <FaNetworkWired size={26}/>, name: 'Highly loaded networks', value: 3},
+    {icon: <SiUnrealengine size={26}/>, name: 'Unreal Engine 5', value: 0},
+]
 
 export default function Hero() {
     return (
