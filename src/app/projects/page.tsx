@@ -38,7 +38,7 @@ export default function Projects() {
                 <ProjectCard image="/projects/ShooterGame.jpg" title="ShooterGame" language={CXX}
                              connections={[]}
                              localization={ENG}>
-                    Vulkan Engine port focused for 2D game development
+                    Test 3D game with OpenGL and built-in network tools
                 </ProjectCard>
             </ProjectCategory>
 
