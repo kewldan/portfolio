@@ -40,6 +40,8 @@ export default function Projects() {
                     </div>
                 </div>
                 <span className='mt-4'>
+                    <p className='font-medium py-2'>Демо бот: <a href='https://t.me/aaio_demo_bot'
+                                                                 className='link'>https://t.me/aaio_demo_bot</a></p>
                     В библиотеки реализованы все методы, представленные на сайте AAIO на момент выкладывания версии библиотеки.
                     Все методы, выполняющие HTTP запросы являются асинхронными, а также возвращают модели, а не словари, для валидации данных.
                     После каждого HTTP запроса, библиотека проверяет его <code>type</code>, если он не <code>success</code>, выбрасывается исключение <code>AAIOBadRequest</code> с
