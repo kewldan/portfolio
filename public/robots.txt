@@ -1,3 +1,3 @@
 Sitemap: https://kewldan.vercel.app/sitemap.xml
 User-agent: *
-Allow: https://kewldan.vercel.app/
+Allow: *
