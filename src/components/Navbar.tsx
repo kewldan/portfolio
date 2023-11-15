@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavbarDropdown from "./NavbarDropdown";
 import {FaGithub} from "react-icons/fa6";
+import React from 'react';
 
 const PATHS = [
     {path: "/", name: "Home"},

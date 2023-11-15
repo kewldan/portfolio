@@ -1,6 +1,7 @@
 'use client';
 
 import {darcula} from "react-syntax-highlighter/dist/esm/styles/prism";
+import React from 'react';
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/prism-async";
 
 export default function Code({children}: { children: string }) {

@@ -2,7 +2,7 @@
 
 import {Menu, Transition} from "@headlessui/react";
 import Link from "next/link";
-import {Fragment} from "react";
+import React, {Fragment} from "react";
 import {HiBars3} from "react-icons/hi2";
 
 export default function NavbarDropdown({paths}: { paths: { path: string; name: string }[] }) {

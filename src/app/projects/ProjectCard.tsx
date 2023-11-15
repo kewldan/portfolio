@@ -6,12 +6,12 @@ import {GB, RU} from "country-flag-icons/react/3x2";
 import {TbBrandCpp, TbBrandPython, TbBrandTypescript} from "react-icons/tb";
 import {SiDocsdotrs} from "react-icons/si";
 
-export const RUS = (<div className='tooltip' data-tip='Russian only'><RU className='w-8 rounded-sm'/></div>);
-export const ENG = (<div className='tooltip' data-tip='English only'><GB className='w-8 rounded-sm'/></div>);
+export const RUS = <RU className='w-8 rounded-sm'/>;
+export const ENG = <GB className='w-8 rounded-sm'/>;
 
-export const PYTHON = (<div className='tooltip' data-tip='Python 3'><TbBrandPython size={26}/></div>)
-export const CXX = (<div className='tooltip' data-tip='C++ 20'><TbBrandCpp size={26}/></div>)
-export const TS = (<div className='tooltip' data-tip='TypeScript'><TbBrandTypescript size={26}/></div>)
+export const PYTHON = <TbBrandPython size={26}/>;
+export const CXX = <TbBrandCpp size={26}/>;
+export const TS = <TbBrandTypescript size={26}/>;
 
 function getConnection(link: string, icon: React.ReactNode, text: string) {
     return (

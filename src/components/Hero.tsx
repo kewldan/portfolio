@@ -1,12 +1,13 @@
 import Image from "next/image";
 import {FaGithub, FaNetworkWired, FaStackOverflow, FaTelegram} from "react-icons/fa6";
 import {SiNextdotjs, SiTelegram, SiUnrealengine} from "react-icons/si";
+import React from 'react';
 
 const focuses = [
-    {icon: <SiTelegram size={26}/>, name: 'Telegram web apps', value: 67},
-    {icon: <SiNextdotjs size={26}/>, name: 'Next.JS', value: 40},
-    {icon: <FaNetworkWired size={26}/>, name: 'Highly loaded networks', value: 3},
-    {icon: <SiUnrealengine size={26}/>, name: 'Unreal Engine 5', value: 0},
+    {icon: <SiTelegram size={26}/>, name: 'Telegram web apps', value: 78},
+    {icon: <SiNextdotjs size={26}/>, name: 'Next.JS', value: 64},
+    {icon: <FaNetworkWired size={26}/>, name: 'Highly loaded networks', value: 2},
+    {icon: <SiUnrealengine size={26}/>, name: 'Unreal Engine 5', value: 1},
 ]
 
 export default function Hero() {
@@ -20,45 +21,24 @@ export default function Hero() {
                 <div className="flex flex-col items-center grow">
                     <h1 className="text-5xl font-medium">👋Hi there</h1>
                     <span className="mt-10 text-xl max-w-lg">
-                        My name is Daniil. I{'\''}m a 16 year-old developer from <code className='tooltip'
-                                                                                       data-tip="Russia">Saint-Petersburg</code>.
+                        My name is Daniil. I{'\''}m a 16 year-old developer from Saint-Petersburg, Russia.
 
-                        Today, I work as a indie dev. And focusing on my own projects and POCs
+                        Today, I work as a indie developer. And focusing on my own projects and POCs
                     </span>
                 </div>
             </div>
             <h2 className='font-medium text-2xl mt-4'>Currently learning</h2>
-            <div className='flex flex-row items-center gap-x-3 w-full'>
-                <div className='flex flex-col gap-y-3'>
-                    {
-                        focuses.map(({icon}, index) => (
-                            <p key={`icon-${index}`}>{icon}</p>
-                        ))
-                    }
-                </div>
-                <div className='flex flex-col gap-y-3 min-w-fit'>
-                    {
-                        focuses.map(({name}, index) => (
-                            <span key={`name-${index}`}>{name}</span>
-                        ))
-                    }
-                </div>
-                <div className='flex flex-col gap-y-3 w-full'>
-                    {
-                        focuses.map(({value}, index) => (
-                            <progress key={`progress-${index}`} className="progress w-full my-2 progress-secondary"
-                                      value={value}
-                                      max="100"></progress>
-                        ))
-                    }
-                </div>
-                <div className='flex flex-col gap-y-3'>
-                    {
-                        focuses.map(({value}, index) => (
-                            <code key={`value-${index}`}>{value}%</code>
-                        ))
-                    }
-                </div>
+            <div className='flex flex-col items-center gap-y-4 w-full'>
+                {
+                    focuses.map((focus, index) => (
+                        <div className='flex flex-row items-center w-full gap-x-3' key={index}>
+                            <span className=''>{focus.icon}</span>
+                            <span className='w-[18rem]'>{focus.name}</span>
+                            <progress value={focus.value} max={100} className='progress progress-primary w-full'/>
+                            <span className='w-[4rem]'>{focus.value}%</span>
+                        </div>
+                    ))
+                }
             </div>
             <div className="divider"></div>
             <div className="flex flex-row items-center justify-center gap-x-4">

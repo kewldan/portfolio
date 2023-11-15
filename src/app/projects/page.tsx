@@ -82,17 +82,25 @@ export default function Projects() {
                              connections={[connections.telegram('https://t.me/passport_validate_bot')]}>
                     Bot-mirror for PassportChecker
                 </ProjectCard>
+
                 <ProjectCard image="/projects/AllSms.png" title="AllSMS"
                              localization={RUS}
                              language={PYTHON}
                              connections={[connections.telegram('https://t.me/allsmska_bot')]}>
                     Bot for rent temp phone numbers for registration
                 </ProjectCard>
+
+                <ProjectCard image="/projects/ChemistryBot.png" title="Chemistry bot"
+                             localization={RUS}
+                             language={PYTHON}
+                             connections={[connections.telegram('https://t.me/kwld_chemistry_bot')]}>
+                    Bot for solving chemistry problems
+                </ProjectCard>
             </ProjectCategory>
 
             <ProjectCategory title={'🌐 Web'}>
                 <ProjectCard image="/projects/Gigachat.png" title="Gigachat" language={TS}
-                             connections={[connections.open('http://ylous.keenetic.link:4000/'), connections.github('https://github.com/khokhden/giga-chat')]}
+                             connections={[connections.open('https://kwld-giga-chat.vercel.app/'), connections.github('https://github.com/khokhden/giga-chat')]}
                              localization={RUS}>
                     Global online chat
                 </ProjectCard>
@@ -101,6 +109,12 @@ export default function Projects() {
                              connections={[connections.telegram('https://t.me/grade_app_bot')]}
                              localization={RUS}>
                     Shoes store in Telegram Web App
+                </ProjectCard>
+
+                <ProjectCard image="/projects/Prosim.gif" title="Prosim" language={TS}
+                             connections={[connections.telegram('https://t.me/kwld_pro_sim_bot')]}
+                             localization={RUS}>
+                    Prosim is a service for rent phone numbers to register temp accounts
                 </ProjectCard>
             </ProjectCategory>
 
