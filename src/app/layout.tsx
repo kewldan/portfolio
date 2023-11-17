@@ -23,7 +23,7 @@ export default function RootLayout({
         <head>
             <meta
                 httpEquiv="Content-Security-Policy"
-                content="default-src 'self' vitals.vercel-insights.com; img-src https://*; child-src 'none';" />
+                content="default-src 'self' vitals.vercel-insights.com *.kaspersky-labs.com; img-src https://*; child-src 'none';" />
             <title>kewldan</title>
         </head>
 
