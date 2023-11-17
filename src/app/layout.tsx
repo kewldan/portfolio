@@ -20,6 +20,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+        <head>
+            <meta
+                httpEquiv="Content-Security-Policy"
+                content="default-src 'self' vitals.vercel-insights.com; img-src https://*; child-src 'none';" />
+            <title>kewldan</title>
+        </head>
+
         <body className={`${inter.className} bg-[#1d232a] overflow-x-hidden`}>
         <Navbar/>
         {children}
