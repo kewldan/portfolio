@@ -5,6 +5,7 @@ import {Inter} from 'next/font/google'
 import React from "react";
 import Navbar from "@/components/Navbar";
 import {Analytics} from '@vercel/analytics/react';
+import Socials from "@/components/Socials";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -20,14 +21,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <head>
-            <title>kewldan</title>
-            <meta httpEquiv="Content-Security-Policy"
-                  content="default-src 'self' vitals.vercel-insights.com"/>
-        </head>
-        <body className={`${inter.className} bg-[#1d232a] overflow-x-hidden`}>
-        <Navbar/>
-        {children}
+        <body className={`${inter.className} bg-[#1d232a] overflow-x-hidden min-h-screen w-full`}>
+        <main className='min-h-screen flex flex-col items-center w-full'>
+            <Navbar/>
+            <Socials>
+                {children}
+            </Socials>
+        </main>
         <Analytics/>
         </body>
         </html>

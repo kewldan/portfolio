@@ -10,7 +10,7 @@ const PATHS = [
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-20 flex justify-center py-3 bg-inherit">
+        <header className="sticky top-0 z-20 flex justify-center py-3 bg-inherit w-full">
             <div className="mx-4 flex w-full max-w-7xl items-center justify-center text-left">
                 <NavbarDropdown paths={PATHS}/>
                 <Link href="/">
