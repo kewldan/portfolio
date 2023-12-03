@@ -21,7 +21,7 @@ export default function Projects() {
                 <ProjectCard image="/projects/LogicalSystem.gif" title="Logical System"
                              connections={[connections.itch('https://kewldan.itch.io/logical-system'), connections.github('https://github.com/kewldan/LogicalSystemRemaster')]}
                              localization={ENG}
-                             language={CXX} status={MAINTAINED}>
+                             language={CXX} status={RELEASED}>
                     In this game, you can create any electrical circuits. This game is Turing complete. I was able to
                     create a full 8 bit gated adder in half an hour!
 
@@ -31,13 +31,13 @@ export default function Projects() {
 
                 <ProjectCard image="/projects/VulkanEngine.gif" title="Vulkan Engine" language={CXX}
                              connections={[connections.github('https://github.com/kewldan/VulkanEngine')]}
-                             localization={ENG} status={PAUSED}>
+                             localization={ENG} status={CLOSED}>
                     My own Vulkan Engine for 3d games
                 </ProjectCard>
 
                 <ProjectCard image="/projects/PingPong.gif" title="PingPong" language={CXX}
                              connections={[connections.github('https://github.com/kewldan/ConsolePong')]}
-                             localization={ENG} status={CLOSED}>
+                             localization={ENG} status={RELEASED}>
                     In console ASCII ping pong in c++ made with WinAPI
                 </ProjectCard>
 
@@ -57,14 +57,14 @@ export default function Projects() {
             <ProjectCategory title={'💽 Software'}>
                 <ProjectCard image="/projects/SummerTimer.gif" title="SummerTimer" language={CXX}
                              connections={[connections.github('https://github.com/kewldan/SummerTimer')]}
-                             localization={RUS} status={CLOSED}>
+                             localization={RUS} status={RELEASED}>
                     A programme made as a joke from a video I saw in TikTok. It counts down to the beginning of summer
                     from the beginning of autumn
                 </ProjectCard>
 
                 <ProjectCard image="/projects/PassportChecker.png" title="PassportChecker"
                              connections={[connections.contact]}
-                             language={CXX} localization={RUS} commercial={true} status={PAUSED}>
+                             language={CXX} localization={RUS} commercial={true} status={RELEASED}>
                     Software for working with passports of the Russian Federation. It can check passports for validity,
                     obtain TIN (ИНН) and export data to a file
                 </ProjectCard>
@@ -86,7 +86,7 @@ export default function Projects() {
 
                 <ProjectCard image="/projects/ShopBot.png" title="ShopBot" language={PYTHON}
                              localization={RUS} connections={[connections.telegram('https://t.me/FreeShopPain_Bot')]}
-                             commercial={true} status={MAINTAINED}>
+                             commercial={true} status={RELEASED}>
                     Bot for selling digital goods
                 </ProjectCard>
 
@@ -117,20 +117,26 @@ export default function Projects() {
             <ProjectCategory title={'🌐 Web'}>
                 <ProjectCard image="/projects/Gigachat.png" title="Gigachat" language={TS}
                              connections={[connections.open('https://kwld-giga-chat.vercel.app/'), connections.github('https://github.com/khokhden/giga-chat')]}
-                             localization={RUS} status={CLOSED}>
+                             localization={RUS} status={RELEASED}>
                     Global online chat
                 </ProjectCard>
 
                 <ProjectCard image="/projects/GradeApp.gif" title="GradeApp" language={TS}
                              connections={[connections.telegram('https://t.me/grade_app_bot')]}
-                             localization={RUS} commercial={true} status={DEVELOPMENT}>
+                             localization={RUS} commercial={true} status={PAUSED}>
                     Shoes store in Telegram Web App
                 </ProjectCard>
 
-                <ProjectCard image="/projects/Prosim.gif" title="Prosim" language={TS}
+                <ProjectCard image="/projects/ProSim.jpg" title="Prosim" language={TS}
                              connections={[connections.telegram('https://t.me/kwld_pro_sim_bot')]}
                              localization={RUS} commercial={true} status={DEVELOPMENT}>
                     Prosim is a service for rent phone numbers to register temp accounts
+                </ProjectCard>
+
+                <ProjectCard image="/projects/Itmax.png" title="ITMAX Заявки" language={TS}
+                             connections={[]}
+                             localization={RUS} commercial={true} status={RELEASED}>
+                    Application for receipt of requests
                 </ProjectCard>
             </ProjectCategory>
 
