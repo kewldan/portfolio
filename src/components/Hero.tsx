@@ -6,7 +6,7 @@ export default function Hero() {
         <main className='flex flex-col items-center gap-y-3 p-2'>
             <div className="flex flex-row items-center justify-between flex-wrap gap-6">
                 <div className="flex flex-col items-center grow">
-                    <Image src="/avatar.jpg" alt="alt" width={348} height={348} className="rounded-2xl" priority/>
+                    <Image src='/avatar.jpg' alt="alt" width={348} height={348} className="rounded-2xl" priority/>
                 </div>
 
                 <div className="flex flex-col items-center grow">
