@@ -1,5 +1,6 @@
 const allowed: Record<string, { name: string }> = {
-    '03560274-043C-0535-2906-1C0700080009': {name: '@kewldan'}
+    '03560274-043C-0535-2906-1C0700080009': {name: '@kewldan'},
+    'D37E5897-83CA-EB11-80DE-088FC3027302': {name: '@kalkof'}
 }
 
 export async function POST(request: Request) {
