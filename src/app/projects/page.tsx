@@ -142,8 +142,8 @@ export default function Projects() {
 
             <ProjectCategory title={'📕 Libraries'}>
                 <ProjectCard title="AAIO" language={PYTHON}
-                             localization={ENG}
-                             connections={[connections.docs('/projects/aaio'), connections.github('https://github.com/kewldan/AAIO')]}
+                             localization={RUS}
+                             connections={[connections.docs('aaio.kewldan.ru'), connections.github('https://github.com/kewldan/AAIO')]}
                              image={'/projects/AAIO.png'} status={MAINTAINED}>
                     This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
                     and
