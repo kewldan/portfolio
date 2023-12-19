@@ -1,11 +1,4 @@
-const allowed: Record<string, { name: string }> = {
-    '03560274-043C-0535-2906-1C0700080009': {name: '@kewldan'},
-    'D37E5897-83CA-EB11-80DE-088FC3027302': {name: '@kalkof'},
-    '03C00218-044D-05D8-6D06-CE0700080009': {name: '@kalkof-computer'},
-    'D06CC6AA-CE5E-D144-BB1F-B47CC4169849': {name: '@Abonentnezanyat'},
-    '0F662900-5BCB-11D9-928F-10BF487202F1': {name: '@tg_vesta'},
-    '95ACBD95-48B6-6B1C-A99C-D8BBC1D01CBF': {name: '@matveybett'}
-}
+import {getDRMRecords} from "@/lib/Database";
 
 export async function POST(request: Request) {
     const data = await request.json();
@@ -14,9 +7,11 @@ export async function POST(request: Request) {
 
     const uuid = data.uuid;
 
-    if (uuid in allowed) {
-        return Response.json({type: 'success', ...allowed[uuid]});
-    }
+    const records = await getDRMRecords();
+    const record = await records.findOne({uuid});
 
-    return Response.json({type: 'error'});
+    if (!record)
+        return Response.json({type: 'error'});
+
+    return Response.json({type: 'success', name: record.name});
 }

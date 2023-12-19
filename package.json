@@ -12,12 +12,13 @@
     "@vercel/analytics": "^1.1.1",
     "country-flag-icons": "^1.5.9",
     "million": "^2.6.4",
+    "mongodb": "^6.3.0",
     "next": "^14.0.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "react-syntax-highlighter": "^15.5.0",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
     "@types/node": "^20",
