@@ -112,6 +112,12 @@ export default function Projects() {
                              connections={[connections.telegram('https://t.me/kwld_chemistry_bot')]} status={PAUSED}>
                     Bot for solving chemistry problems
                 </ProjectCard>
+
+                <ProjectCard image="/projects/CumBot.png" title="Fun Cum Bot" language={PYTHON}
+                             connections={[connections.telegram('https://t.me/kwld_cum_bot')]}
+                             localization={RUS} commercial={true} status={MAINTAINED}>
+                    Fun bot to edit images
+                </ProjectCard>
             </ProjectCategory>
 
             <ProjectCategory title={'🌐 Web'}>
@@ -127,10 +133,10 @@ export default function Projects() {
                     Shoes store in Telegram Web App
                 </ProjectCard>
 
-                <ProjectCard image="/projects/ProSim.jpg" title="Prosim" language={TS}
-                             connections={[connections.telegram('https://t.me/kwld_pro_sim_bot')]}
+                <ProjectCard image="/projects/ComplexSMS.png" title="Prosim" language={TS}
+                             connections={[connections.telegram('https://t.me/complexsms_bot')]}
                              localization={RUS} commercial={true} status={DEVELOPMENT}>
-                    Prosim is a service for rent phone numbers to register temp accounts
+                    ComplexSMS is a service for rent phone numbers to register temp accounts
                 </ProjectCard>
 
                 <ProjectCard image="/projects/Itmax.png" title="ITMAX Заявки" language={TS}

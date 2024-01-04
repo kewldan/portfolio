@@ -8,7 +8,6 @@ export async function POST(request: Request) {
     const uuid = data.uuid;
     const telemetry = data.telemetry;
 
-    // telemetry.remote_ip = (request.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0];
     telemetry.timestamp = Math.floor(Date.now() / 1000)
 
     const records = await getDRMRecords();
