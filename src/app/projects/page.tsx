@@ -133,10 +133,18 @@ export default function Projects() {
                     Shoes store in Telegram Web App
                 </ProjectCard>
 
-                <ProjectCard image="/projects/ComplexSMS.png" title="Prosim" language={TS}
+                <ProjectCard image="/projects/ComplexSMS.png" title="Complex SMS" language={TS}
                              connections={[connections.telegram('https://t.me/complexsms_bot')]}
                              localization={RUS} commercial={true} status={DEVELOPMENT}>
                     ComplexSMS is a service for rent phone numbers to register temp accounts
+                </ProjectCard>
+
+                <ProjectCard image="/projects/Sudooky.png" title="Sudooky" language={TS}
+                             connections={[connections.telegram('https://t.me/sudooky_bot')]}
+                             localization={RUS} commercial={false} status={DEVELOPMENT}>
+                    Sudooky is a bot with a Telegram Web App where you can play Sudoku.
+                    In the future I plan to add other games like Minesweeper, Durak and Tetris.
+                    I also want to add a friend and record system to compete with each other
                 </ProjectCard>
 
                 <ProjectCard image="/projects/Itmax.png" title="ITMAX Заявки" language={TS}
