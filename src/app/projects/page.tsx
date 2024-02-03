@@ -127,9 +127,9 @@ export default function Projects() {
                     Global online chat
                 </ProjectCard>
 
-                <ProjectCard image="/projects/GradeApp.gif" title="GradeApp" language={TS}
+                <ProjectCard image="/projects/GradeApp.png" title="GradeApp" language={TS}
                              connections={[connections.telegram('https://t.me/grade_app_bot')]}
-                             localization={RUS} commercial={true} status={PAUSED}>
+                             localization={RUS} commercial={true} status={RELEASED}>
                     Shoes store in Telegram Web App
                 </ProjectCard>
 
@@ -141,7 +141,7 @@ export default function Projects() {
 
                 <ProjectCard image="/projects/Sudooky.png" title="Sudooky" language={TS}
                              connections={[connections.telegram('https://t.me/sudooky_bot')]}
-                             localization={RUS} commercial={false} status={DEVELOPMENT}>
+                             localization={RUS} commercial={false} status={MAINTAINED}>
                     Sudooky is a bot with a Telegram Web App where you can play Sudoku.
                     In the future I plan to add other games like Minesweeper, Durak and Tetris.
                     I also want to add a friend and record system to compete with each other
@@ -158,18 +158,27 @@ export default function Projects() {
                 <ProjectCard title="AAIO" language={PYTHON}
                              localization={RUS}
                              connections={[connections.docs('aaio.kewldan.ru'), connections.github('https://github.com/kewldan/AAIO')]}
-                             image={'/projects/AAIO.png'} status={MAINTAINED}>
+                             image={'/projects/AAIO.png'} status={RELEASED}>
                     This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
                     and
                     all types are explicitly defined. The library does not handle any exceptions, so be careful. Methods
                     that create requests to aaio.io return a pydantic&apos;s models for each response
                 </ProjectCard>
 
+                <ProjectCard title="aaio.js" language={TS}
+                             localization={RUS}
+                             connections={[connections.github('https://github.com/kewldan/aaio.js')]}
+                             image={'/projects/aaio.js.png'} status={RELEASED}>
+                    This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
+                    and
+                    all types are explicitly defined
+                </ProjectCard>
+
                 <ProjectCard title="MinecraftServerCore" language={CXX}
                              localization={ENG}
                              connections={[connections.github('https://github.com/kewldan/MinecraftServerCore')]}
                              image="/projects/MinecraftServerCore.jpg" status={PAUSED}>
-                    Minecraft server backend implementation from scratch WIP
+                    Minecraft server backend implementation from scratch
                 </ProjectCard>
             </ProjectCategory>
         </main>
