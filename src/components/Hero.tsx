@@ -18,12 +18,6 @@ export default function Hero() {
                     </span>
                 </div>
             </div>
-
-            <div className='flex flex-row items-start w-full'>
-                <img
-                    src='https://github-readme-stats.vercel.app/api/top-langs/?username=kewldan&size_weight=0.5&count_weight=0.5&layout=compact&theme=radical'
-                    alt='stats'/>
-            </div>
         </main>
     )
 }
