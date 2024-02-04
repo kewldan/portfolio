@@ -24,6 +24,11 @@ const nextConfig = {
                 source: "/stack-overflow",
                 destination: "https://stackoverflow.com/users/15113869/kewldan",
                 permanent: true
+            },
+            {
+                source: "/npm",
+                destination: "https://www.npmjs.com/~kewldan",
+                permanent: true
             }
         ];
     },

@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import {Analytics} from '@vercel/analytics/react';
 import Socials from "@/components/Socials";
 
-const inter = Inter({subsets: ['latin']})
+const inter = Inter({subsets: ['latin', 'cyrillic'], display: 'fallback'})
 
 export const metadata: Metadata = {
     title: 'kewldan',

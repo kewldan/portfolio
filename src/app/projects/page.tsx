@@ -16,7 +16,7 @@ import React from "react";
 
 export default function Projects() {
     return (
-        <main className="flex flex-col items-center gap-y-2 pb-4">
+        <main className="flex flex-col items-center gap-6 py-4">
             <ProjectCategory title={'🎮 Games'}>
                 <ProjectCard image="/projects/LogicalSystem.gif" title="Logical System"
                              connections={[connections.itch('https://kewldan.itch.io/logical-system'), connections.github('https://github.com/kewldan/LogicalSystemRemaster')]}

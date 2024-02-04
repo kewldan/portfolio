@@ -54,7 +54,7 @@ export default function ProjectCard({children, title, language, localization, im
 }) {
     return (
         <div
-            className={`flex flex-col items-center justify-between gap-y-4 max-w-lg w-full bg-[#15191e] p-4 rounded-xl`}>
+            className={`flex flex-col items-center justify-between gap-y-4 w-full bg-[#15191e] p-4 rounded-xl`}>
             <div className="text-2xl flex flex-row flex-wrap items-center gap-x-4 justify-between w-full">
                 <div className="flex flex-row items-center justify-center font-semibold">
                     {title}
@@ -75,7 +75,7 @@ export default function ProjectCard({children, title, language, localization, im
             </div>
 
             {
-                image && <Image src={image} alt={title} width={1024} height={400} className="rounded-xl"/>
+                image && <Image src={image} alt={title} width={500} height={280} className="rounded-xl object-fill h-full"/>
             }
 
             {children}

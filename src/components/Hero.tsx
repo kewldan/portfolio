@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from 'react';
+import {FaNpm} from "react-icons/fa6";
 
 export default function Hero() {
     return (
