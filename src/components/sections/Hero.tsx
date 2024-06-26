@@ -5,10 +5,10 @@ import PhotoGallery from "@/components/PhotoGallery";
 export default function Hero() {
     return (
         <main className='flex flex-col items-center gap-y-3 p-8 min-h-[40rem] w-full relative'>
-            <h1 className="absolute -z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-[#474757] text-background">
+            <h1 className="absolute -z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background hidden lg:block">
                 I LOVE<br/>PROGRAMMING
             </h1>
-            <h1 className="absolute -z-10 text-6xl font-extrabold top-4 right-4 tracking-tight lg:text-8xl font-outline-[#474757] text-background">
+            <h1 className="absolute -z-10 text-6xl font-extrabold top-4 right-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background hidden md:block">
                 CODING IS<br/> MY <span className='text-red'>PASSION</span>
             </h1>
             <div className="flex flex-row items-center justify-between flex-wrap gap-6">

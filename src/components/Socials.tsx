@@ -1,27 +1,26 @@
 import {FaGithub, FaNpm, FaStackOverflow, FaTelegram, FaVk} from "react-icons/fa6";
 import React from "react";
-import Link from "next/link";
 
 export default function Socials({children}: { children: React.ReactNode }) {
     return (
         <div className='w-full flex flex-col justify-between items-center grow h-full pb-4'>
             {children}
             <div className="flex flex-row items-center justify-center gap-x-4 text-neutral-800 dark:text-neutral-300">
-                <Link href="/telegram" className='hover:text-gray-300 transition-all'>
+                <a href="/telegram" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
                     <FaTelegram size={26}/>
-                </Link>
-                <Link href="/github" className='hover:text-gray-300 transition-all'>
+                </a>
+                <a href="/github" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
                     <FaGithub size={26}/>
-                </Link>
-                <Link href="/stack-overflow" className='hover:text-gray-300 transition-all'>
+                </a>
+                <a href="/stack-overflow" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
                     <FaStackOverflow size={26}/>
-                </Link>
-                <Link href="/vk" className='hover:text-gray-300 transition-all'>
+                </a>
+                <a href="/vk" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
                     <FaVk size={26}/>
-                </Link>
-                <Link href="/npm" className='hover:text-gray-300 transition-all'>
+                </a>
+                <a href="/npm" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
                     <FaNpm size={26}/>
-                </Link>
+                </a>
             </div>
         </div>
     )

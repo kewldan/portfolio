@@ -5,7 +5,7 @@ export default function Skills() {
     return (
         <section
             className='w-full min-h-[40rem] relative'>
-            <h1 className="absolute -z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-[#474757] text-background">
+            <h1 className="absolute -z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
                 MADE WITH LOVE&NEXT.JS V14
             </h1>
             <div className="p-8 flex flex-col lg:flex-row items-center justify-between">

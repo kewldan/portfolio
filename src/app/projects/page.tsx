@@ -119,7 +119,7 @@ const projects: Record<string, {
 
 export default function Projects() {
     return (
-        <main className="flex flex-col items-center gap-6 py-4">
+        <main className="flex flex-col items-center gap-6 py-4 w-full px-16">
             {
                 Object.keys(projects).map(category => (
                     <ProjectCategory key={category} title={category}>

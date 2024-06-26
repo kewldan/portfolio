@@ -18,11 +18,11 @@ const phrases: Record<string, string> = {
     5: 'IMPECCABLE',
 }
 
-function Segment({index, color}: { index: number, color: string }) {
+function Segment({index, color}: { index: number, color: string | null }) {
     return (
-        <div className='w-1/5 h-full'
+        <div className='w-1/5 h-full bg-neutral-400'
              style={{
-                 backgroundColor: color,
+                 ...(color ? {backgroundColor: color} : {}),
                  ...(index === 0 ? {
                      borderTopLeftRadius: '1rem',
                      borderBottomLeftRadius: '1rem'
@@ -39,13 +39,13 @@ function Segment({index, color}: { index: number, color: string }) {
 
 export default function SegmentedProgress({value}: { value: number }) {
     return (
-        <div className='h-4 flex flex-row items-center divide-x divide-neutral-600 relative'>
+        <div className='h-4 flex flex-row items-center divide-x divide-neutral-300 dark:divide-neutral-600 relative'>
             <span
                 className='w-full justify-center items-center flex flex-col absolute font-bold text-xs text-white'>{phrases[value]}</span>
             {
                 Array.from({length: 5}).map((_, index) => (
                     <Segment key={`Progress-${index}`} index={index}
-                             color={index >= value ? '#2c2c2c' : colors[value]}/>
+                             color={index < value ? colors[value] : null}/>
                 ))
             }
         </div>

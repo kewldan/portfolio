@@ -25,7 +25,7 @@ export default function ProjectCard({children, title, language, localization, im
 }) {
     return (
         <div
-            className={`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl`}>
+            className={`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl max-w-md`}>
             <div className="text-2xl flex flex-row flex-wrap items-center gap-x-4 justify-between w-full">
                 <div className="flex flex-row items-center justify-center font-semibold">
                     {title}
