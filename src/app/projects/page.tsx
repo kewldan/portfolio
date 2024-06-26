@@ -1,18 +1,6 @@
 import ProjectCategory from "@/app/projects/ProjectCategory";
 import React, {ReactNode} from "react";
-import {
-    CLOSED,
-    CXX,
-    DEVELOPMENT,
-    ENG,
-    MAINTAINED,
-    PAUSED,
-    ProjectStatus,
-    PYTHON,
-    RELEASED,
-    RUS,
-    TS
-} from "@/app/projects/types";
+import {ProjectLanguage, ProjectLocale, ProjectStatus,} from "@/app/projects/types";
 import ProjectCard from "@/app/projects/ProjectCard";
 import Connection from "@/app/projects/connection";
 import {FaGithub, FaItchIo, FaLink, FaTelegram} from "react-icons/fa6";
@@ -33,8 +21,8 @@ const projects: Record<string, {
     image: string;
     description: Readonly<ReactNode>;
     connections: any[];
-    localization: ReactNode;
-    language: ReactNode;
+    localization: ProjectLocale;
+    language: ProjectLanguage;
     status: ProjectStatus;
     commercial?: boolean;
 }[]> = {
@@ -49,44 +37,44 @@ const projects: Record<string, {
                     The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT
                     and more.</p>),
             connections: [connections.itch('https://kewldan.itch.io/logical-system'), connections.github('https://github.com/kewldan/LogicalSystemRemaster')],
-            localization: ENG,
-            language: CXX,
-            status: RELEASED
+            localization: 'en',
+            language: 'cxx',
+            status: 'released'
         },
         {
             title: 'Vulkan Engine',
             image: "/projects/VulkanEngine.gif",
-            language: CXX,
+            language: 'cxx',
             connections: [connections.github('https://github.com/kewldan/VulkanEngine')],
-            localization: ENG,
-            status: CLOSED,
+            localization: 'en',
+            status: 'closed',
             description: 'My own Vulkan Engine for 3d games'
         },
         {
             title: 'PingPong',
             image: '/projects/PingPong.gif',
-            language: CXX,
+            language: 'cxx',
             connections: [connections.github('https://github.com/kewldan/ConsolePong')],
-            localization: ENG,
-            status: RELEASED,
+            localization: 'en',
+            status: 'released',
             description: 'In console ASCII ping pong in c++ made with WinAPI'
         },
         {
             image: '/projects/Vulkan2D.png',
             title: 'VulkanEngine 2D',
-            language: CXX,
+            language: 'cxx',
             connections: [],
-            localization: ENG,
-            status: PAUSED,
+            localization: 'en',
+            status: 'paused',
             description: 'Vulkan Engine port focused for 2D game development'
         },
         {
             title: 'ShooterGame',
             image: '/projects/ShooterGame.jpg',
-            language: CXX,
+            language: 'cxx',
             connections: [],
-            localization: ENG,
-            status: CLOSED,
+            localization: 'en',
+            status: 'closed',
             description: 'Test 3D game with OpenGL and built-in network tools'
         }
     ],
@@ -94,10 +82,10 @@ const projects: Record<string, {
         {
             title: 'SummerTimer',
             image: '/projects/SummerTimer.gif',
-            language: CXX,
+            language: 'cxx',
             connections: [connections.github('https://github.com/kewldan/SummerTimer')],
-            localization: RUS,
-            status: RELEASED,
+            localization: 'ru',
+            status: 'released',
             description: <p>
                 A programme made as a joke from a video I saw in TikTok. It counts down to the beginning of summer
                 from the beginning of autumn
@@ -107,10 +95,10 @@ const projects: Record<string, {
             title: "PassportChecker",
             image: '/projects/PassportChecker.png',
             connections: [connections.contact()],
-            language: CXX,
-            localization: RUS,
+            language: 'cxx',
+            localization: 'ru',
             commercial: true,
-            status: RELEASED,
+            status: 'released',
             description: <p>
                 Software for working with passports of the Russian Federation. It can check passports for validity,
                 obtain TIN (ИНН) and export data to a file
@@ -120,10 +108,10 @@ const projects: Record<string, {
             title: 'PassportOCR',
             image: "/projects/PassportOCR.png",
             connections: [connections.contact()],
-            language: CXX,
-            localization: RUS,
+            language: 'cxx',
+            localization: 'ru',
             commercial: true,
-            status: PAUSED,
+            status: 'paused',
             description: 'Software for OCR passports of the Russian Federation'
         }
     ]
@@ -150,106 +138,106 @@ export default function Projects() {
             }
 
             <ProjectCategory title={'🤖 Bots'}>
-                <ProjectCard image="/projects/SolverBot.png" title="SolverBot" language={PYTHON}
+                <ProjectCard image="/projects/SolverBot.png" title="SolverBot" language={'python'}
                              connections={[connections.telegram('https://t.me/kwld_solver_bot')]}
-                             localization={RUS} status={RELEASED}>
+                             localization={'ru'} status={'released'}>
                     Bot for solving РЕШУ ОГЭ/ВПР/ЕГЭ tests
                 </ProjectCard>
 
-                <ProjectCard image="/projects/ShopBot.png" title="ShopBot" language={PYTHON}
-                             localization={RUS} connections={[connections.telegram('https://t.me/FreeShopPain_Bot')]}
-                             commercial={true} status={RELEASED}>
+                <ProjectCard image="/projects/ShopBot.png" title="ShopBot" language={'python'}
+                             localization={'ru'} connections={[connections.telegram('https://t.me/FreeShopPain_Bot')]}
+                             commercial={true} status={'released'}>
                     Bot for selling digital goods
                 </ProjectCard>
 
                 <ProjectCard image="/projects/PassportCheckerBot.png" title="PassportCheckerBot"
-                             localization={RUS}
-                             language={CXX}
+                             localization={'ru'}
+                             language={'cxx'}
                              connections={[connections.telegram('https://t.me/passport_validate_bot')]}
-                             commercial={true} status={CLOSED}>
+                             commercial={true} status={'closed'}>
                     Bot-mirror for PassportChecker
                 </ProjectCard>
 
                 <ProjectCard image="/projects/AllSms.png" title="AllSMS"
-                             localization={RUS}
-                             language={PYTHON}
+                             localization={'ru'}
+                             language={'python'}
                              connections={[connections.telegram('https://t.me/allsmska_bot')]} commercial={true}
-                             status={CLOSED}>
+                             status={'closed'}>
                     Bot for rent temp phone numbers for registration
                 </ProjectCard>
 
                 <ProjectCard image="/projects/ChemistryBot.png" title="Chemistry bot"
-                             localization={RUS}
-                             language={PYTHON}
-                             connections={[connections.telegram('https://t.me/kwld_chemistry_bot')]} status={PAUSED}>
+                             localization={'ru'}
+                             language={'python'}
+                             connections={[connections.telegram('https://t.me/kwld_chemistry_bot')]} status={'paused'}>
                     Bot for solving chemistry problems
                 </ProjectCard>
 
-                <ProjectCard image="/projects/CumBot.png" title="Fun Cum Bot" language={PYTHON}
+                <ProjectCard image="/projects/CumBot.png" title="Fun Cum Bot" language={'python'}
                              connections={[connections.telegram('https://t.me/kwld_cum_bot')]}
-                             localization={RUS} commercial={true} status={MAINTAINED}>
+                             localization={'ru'} commercial={true} status={'maintained'}>
                     Fun bot to edit images
                 </ProjectCard>
             </ProjectCategory>
 
             <ProjectCategory title={'🌐 Web'}>
-                <ProjectCard image="/projects/Gigachat.png" title="Gigachat" language={TS}
+                <ProjectCard image="/projects/Gigachat.png" title="Gigachat" language={'ts'}
                              connections={[connections.open('https://kwld-giga-chat.vercel.app/'), connections.github('https://github.com/khokhden/giga-chat')]}
-                             localization={RUS} status={RELEASED}>
+                             localization={'ru'} status={'released'}>
                     Global online chat
                 </ProjectCard>
 
-                <ProjectCard image="/projects/GradeApp.png" title="GradeApp" language={TS}
+                <ProjectCard image="/projects/GradeApp.png" title="GradeApp" language={'ts'}
                              connections={[connections.telegram('https://t.me/grade_app_bot')]}
-                             localization={RUS} commercial={true} status={RELEASED}>
+                             localization={'ru'} commercial={true} status={'released'}>
                     Shoes store in Telegram Web App
                 </ProjectCard>
 
-                <ProjectCard image="/projects/ComplexSMS.png" title="Complex SMS" language={TS}
+                <ProjectCard image="/projects/ComplexSMS.png" title="Complex SMS" language={'ts'}
                              connections={[connections.telegram('https://t.me/complexsms_bot')]}
-                             localization={RUS} commercial={true} status={DEVELOPMENT}>
+                             localization={'ru'} commercial={true} status={'in-dev'}>
                     ComplexSMS is a service for rent phone numbers to register temp accounts
                 </ProjectCard>
 
-                <ProjectCard image="/projects/Sudooky.png" title="Sudooky" language={TS}
+                <ProjectCard image="/projects/Sudooky.png" title="Sudooky" language={'ts'}
                              connections={[connections.telegram('https://t.me/sudooky_bot')]}
-                             localization={RUS} commercial={false} status={MAINTAINED}>
+                             localization={'ru'} commercial={false} status={'maintained'}>
                     Sudooky is a bot with a Telegram Web App where you can play Sudoku.
                     In the future I plan to add other games like Minesweeper, Durak and Tetris.
                     I also want to add a friend and record system to compete with each other
                 </ProjectCard>
 
-                <ProjectCard image="/projects/Itmax.png" title="ITMAX Заявки" language={TS}
+                <ProjectCard image="/projects/Itmax.png" title="ITMAX Заявки" language={'ts'}
                              connections={[]}
-                             localization={RUS} commercial={true} status={RELEASED}>
+                             localization={'ru'} commercial={true} status={'released'}>
                     Application for receipt of requests
                 </ProjectCard>
             </ProjectCategory>
 
             <ProjectCategory title={'📕 Libraries'}>
-                <ProjectCard title="AAIO" language={PYTHON}
-                             localization={RUS}
+                <ProjectCard title="AAIO" language={'python'}
+                             localization={'ru'}
                              connections={[connections.docs('aaio.kewldan.ru'), connections.github('https://github.com/kewldan/AAIO')]}
-                             image={'/projects/AAIO.png'} status={RELEASED}>
+                             image={'/projects/AAIO.png'} status={'released'}>
                     This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
                     and
                     all types are explicitly defined. The library does not handle any exceptions, so be careful. Methods
                     that create requests to aaio.io return a pydantic&apos;s models for each response
                 </ProjectCard>
 
-                <ProjectCard title="aaio.js" language={TS}
-                             localization={RUS}
+                <ProjectCard title="aaio.js" language={'ts'}
+                             localization={'ru'}
                              connections={[connections.github('https://github.com/kewldan/aaio.js')]}
-                             image={'/projects/aaio.js.png'} status={RELEASED}>
+                             image={'/projects/aaio.js.png'} status={'released'}>
                     This library is a wrapper for the https://aaio.io/ API from enthusiasts. All methods are described
                     and
                     all types are explicitly defined
                 </ProjectCard>
 
-                <ProjectCard title="MinecraftServerCore" language={CXX}
-                             localization={ENG}
+                <ProjectCard title="MinecraftServerCore" language={'cxx'}
+                             localization={'en'}
                              connections={[connections.github('https://github.com/kewldan/MinecraftServerCore')]}
-                             image="/projects/MinecraftServerCore.jpg" status={PAUSED}>
+                             image="/projects/MinecraftServerCore.jpg" status={'paused'}>
                     Minecraft server backend implementation from scratch
                 </ProjectCard>
             </ProjectCategory>

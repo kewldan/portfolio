@@ -2,15 +2,22 @@
 
 import React from "react";
 import Image from "next/image"
-import {FaCoins} from "react-icons/fa6";
-import {ProjectStatus} from "@/app/projects/types";
+import {
+    ProjectLanguage,
+    projectLanguages,
+    ProjectLocale,
+    projectLocales,
+    ProjectStatus,
+    projectStatusColors
+} from "@/app/projects/types";
+import {Receipt} from "lucide-react";
 
 
 export default function ProjectCard({children, title, language, localization, image, connections, status, commercial}: {
     children: React.ReactNode,
     title: string,
-    language: React.ReactNode,
-    localization: React.ReactNode,
+    language: ProjectLanguage,
+    localization: ProjectLocale,
     image: string,
     connections: React.ReactNode[],
     status?: ProjectStatus,
@@ -27,14 +34,15 @@ export default function ProjectCard({children, title, language, localization, im
                 <div className="flex flex-row items-center justify-center gap-x-2 text-sm">
                     {
                         status && (
-                            <span style={{backgroundColor: status.color}} className='rounded-full px-4 py-0.5 text-center'>
-                        {status.name}
+                            <span style={{backgroundColor: projectStatusColors[status]}}
+                                  className='rounded-full px-4 py-0.5 text-center text-white font-bold'>
+                        {status.toUpperCase()}
                     </span>
                         )
                     }
-                    {commercial && <div><FaCoins size={22}/></div>}
-                    {language}
-                    {localization}
+                    {commercial && <Receipt/>}
+                    {projectLanguages[language]}
+                    {projectLocales[localization]}
                 </div>
             </div>
 
