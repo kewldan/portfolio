@@ -1,81 +1,153 @@
-import ProjectCard, {
+import ProjectCategory from "@/app/projects/ProjectCategory";
+import React, {ReactNode} from "react";
+import {
     CLOSED,
-    connections,
     CXX,
     DEVELOPMENT,
     ENG,
     MAINTAINED,
     PAUSED,
+    ProjectStatus,
     PYTHON,
     RELEASED,
     RUS,
     TS
-} from "@/app/projects/ProjectCard";
-import ProjectCategory from "@/app/projects/ProjectCategory";
-import React from "react";
+} from "@/app/projects/types";
+import ProjectCard from "@/app/projects/ProjectCard";
+import Connection from "@/app/projects/connection";
+import {FaGithub, FaItchIo, FaLink, FaTelegram} from "react-icons/fa6";
+import {BiLockAlt} from "react-icons/bi";
+import {SiDocsdotrs} from "react-icons/si";
+
+const connections = {
+    github: (link: string) => <Connection link={link} icon={<FaGithub size={26}/>} text="Github"/>,
+    itch: (link: string) => <Connection link={link} icon={<FaItchIo size={26}/>} text='Itch.io'/>,
+    contact: () => <Connection {...{link: '/telegram', icon: <BiLockAlt size={26}/>, text: 'Contact me'}}/>,
+    telegram: (link: string) => <Connection {...{link, icon: <FaTelegram size={26}/>, text: 'Telegram'}}/>,
+    open: (link: string) => <Connection {...{link, icon: <FaLink size={26}/>, text: 'Open'}}/>,
+    docs: (link: string) => <Connection {...{link, icon: <SiDocsdotrs size={26}/>, text: 'Docs'}}/>
+}
+
+const projects: Record<string, {
+    title: string;
+    image: string;
+    description: Readonly<ReactNode>;
+    connections: any[];
+    localization: ReactNode;
+    language: ReactNode;
+    status: ProjectStatus;
+    commercial?: boolean;
+}[]> = {
+    'Games': [
+        {
+            image: '/projects/LogicalSystem.gif',
+            title: 'Logical System',
+            description: (
+                <p>In this game, you can create any electrical circuits. This game is Turing complete. I was able to
+                    create a full 8 bit gated adder in half an hour!
+
+                    The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT
+                    and more.</p>),
+            connections: [connections.itch('https://kewldan.itch.io/logical-system'), connections.github('https://github.com/kewldan/LogicalSystemRemaster')],
+            localization: ENG,
+            language: CXX,
+            status: RELEASED
+        },
+        {
+            title: 'Vulkan Engine',
+            image: "/projects/VulkanEngine.gif",
+            language: CXX,
+            connections: [connections.github('https://github.com/kewldan/VulkanEngine')],
+            localization: ENG,
+            status: CLOSED,
+            description: 'My own Vulkan Engine for 3d games'
+        },
+        {
+            title: 'PingPong',
+            image: '/projects/PingPong.gif',
+            language: CXX,
+            connections: [connections.github('https://github.com/kewldan/ConsolePong')],
+            localization: ENG,
+            status: RELEASED,
+            description: 'In console ASCII ping pong in c++ made with WinAPI'
+        },
+        {
+            image: '/projects/Vulkan2D.png',
+            title: 'VulkanEngine 2D',
+            language: CXX,
+            connections: [],
+            localization: ENG,
+            status: PAUSED,
+            description: 'Vulkan Engine port focused for 2D game development'
+        },
+        {
+            title: 'ShooterGame',
+            image: '/projects/ShooterGame.jpg',
+            language: CXX,
+            connections: [],
+            localization: ENG,
+            status: CLOSED,
+            description: 'Test 3D game with OpenGL and built-in network tools'
+        }
+    ],
+    'Software': [
+        {
+            title: 'SummerTimer',
+            image: '/projects/SummerTimer.gif',
+            language: CXX,
+            connections: [connections.github('https://github.com/kewldan/SummerTimer')],
+            localization: RUS,
+            status: RELEASED,
+            description: <p>
+                A programme made as a joke from a video I saw in TikTok. It counts down to the beginning of summer
+                from the beginning of autumn
+            </p>
+        },
+        {
+            title: "PassportChecker",
+            image: '/projects/PassportChecker.png',
+            connections: [connections.contact()],
+            language: CXX,
+            localization: RUS,
+            commercial: true,
+            status: RELEASED,
+            description: <p>
+                Software for working with passports of the Russian Federation. It can check passports for validity,
+                obtain TIN (ИНН) and export data to a file
+            </p>
+        },
+        {
+            title: 'PassportOCR',
+            image: "/projects/PassportOCR.png",
+            connections: [connections.contact()],
+            language: CXX,
+            localization: RUS,
+            commercial: true,
+            status: PAUSED,
+            description: 'Software for OCR passports of the Russian Federation'
+        }
+    ]
+}
 
 export default function Projects() {
     return (
         <main className="flex flex-col items-center gap-6 py-4">
-            <ProjectCategory title={'🎮 Games'}>
-                <ProjectCard image="/projects/LogicalSystem.gif" title="Logical System"
-                             connections={[connections.itch('https://kewldan.itch.io/logical-system'), connections.github('https://github.com/kewldan/LogicalSystemRemaster')]}
-                             localization={ENG}
-                             language={CXX} status={RELEASED}>
-                    In this game, you can create any electrical circuits. This game is Turing complete. I was able to
-                    create a full 8 bit gated adder in half an hour!
-
-                    The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT
-                    and more.
-                </ProjectCard>
-
-                <ProjectCard image="/projects/VulkanEngine.gif" title="Vulkan Engine" language={CXX}
-                             connections={[connections.github('https://github.com/kewldan/VulkanEngine')]}
-                             localization={ENG} status={CLOSED}>
-                    My own Vulkan Engine for 3d games
-                </ProjectCard>
-
-                <ProjectCard image="/projects/PingPong.gif" title="PingPong" language={CXX}
-                             connections={[connections.github('https://github.com/kewldan/ConsolePong')]}
-                             localization={ENG} status={RELEASED}>
-                    In console ASCII ping pong in c++ made with WinAPI
-                </ProjectCard>
-
-                <ProjectCard image="/projects/Vulkan2D.png" title="VulkanEngine 2D" language={CXX}
-                             connections={[]}
-                             localization={ENG} status={PAUSED}>
-                    Vulkan Engine port focused for 2D game development
-                </ProjectCard>
-
-                <ProjectCard image="/projects/ShooterGame.jpg" title="ShooterGame" language={CXX}
-                             connections={[]}
-                             localization={ENG} status={CLOSED}>
-                    Test 3D game with OpenGL and built-in network tools
-                </ProjectCard>
-            </ProjectCategory>
-
-            <ProjectCategory title={'💽 Software'}>
-                <ProjectCard image="/projects/SummerTimer.gif" title="SummerTimer" language={CXX}
-                             connections={[connections.github('https://github.com/kewldan/SummerTimer')]}
-                             localization={RUS} status={RELEASED}>
-                    A programme made as a joke from a video I saw in TikTok. It counts down to the beginning of summer
-                    from the beginning of autumn
-                </ProjectCard>
-
-                <ProjectCard image="/projects/PassportChecker.png" title="PassportChecker"
-                             connections={[connections.contact]}
-                             language={CXX} localization={RUS} commercial={true} status={RELEASED}>
-                    Software for working with passports of the Russian Federation. It can check passports for validity,
-                    obtain TIN (ИНН) and export data to a file
-                </ProjectCard>
-
-                <ProjectCard image="/projects/PassportOCR.png" title="PassportOCR"
-                             connections={[connections.contact]}
-                             language={CXX} localization={RUS}
-                             commercial={true} status={PAUSED}>
-                    Software for OCR passports of the Russian Federation
-                </ProjectCard>
-            </ProjectCategory>
+            {
+                Object.keys(projects).map(category => (
+                    <ProjectCategory key={category} title={category}>
+                        {
+                            projects[category].map(project => (
+                                <ProjectCard title={project.title} image={project.image}
+                                             localization={project.localization} connections={project.connections}
+                                             language={project.language} status={project.status}
+                                             commercial={project.commercial} key={project.image}>
+                                    {project.description}
+                                </ProjectCard>
+                            ))
+                        }
+                    </ProjectCategory>
+                ))
+            }
 
             <ProjectCategory title={'🤖 Bots'}>
                 <ProjectCard image="/projects/SolverBot.png" title="SolverBot" language={PYTHON}

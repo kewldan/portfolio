@@ -6,7 +6,7 @@ export default function Socials({children}: { children: React.ReactNode }) {
     return (
         <div className='w-full flex flex-col justify-between items-center grow h-full pb-4'>
             {children}
-            <div className="flex flex-row items-center justify-center gap-x-4">
+            <div className="flex flex-row items-center justify-center gap-x-4 text-neutral-800 dark:text-neutral-300">
                 <Link href="/telegram" className='hover:text-gray-300 transition-all'>
                     <FaTelegram size={26}/>
                 </Link>
