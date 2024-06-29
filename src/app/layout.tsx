@@ -6,6 +6,7 @@ import React from "react";
 import Navbar from "@/components/navbar";
 import Socials from "@/components/socials";
 import {ThemeProvider as NextThemesProvider} from "next-themes"
+import {twMerge} from "tailwind-merge";
 
 const inter = Inter({subsets: ['latin', 'cyrillic'], display: 'fallback'})
 
@@ -22,7 +23,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={`${inter.className} bg-white dark:bg-[#09090b] overflow-x-hidden min-h-screen w-full antialiased font-sans`}>
+            className={twMerge(`bg-white dark:bg-[#09090b] overflow-x-hidden min-h-screen w-full antialiased font-sans`, inter.className)}>
         <main className='min-h-screen flex flex-col items-center w-full'>
             <NextThemesProvider
                 attribute="class"

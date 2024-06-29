@@ -11,6 +11,7 @@ import {
     projectStatusColors
 } from "@/app/projects/types";
 import SegmentedProgress from "@/components/segmentedProgress";
+import {twMerge} from "tailwind-merge";
 
 const phrases: Record<string, string> = {
     0: 'Easy peasy',
@@ -37,7 +38,7 @@ export type ProjectCardItem = {
 export default function ProjectCard({item}: { item: ProjectCardItem }) {
     return (
         <div
-            className={`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl ${item.gold ? 'outline-yellow-500 outline-2 dark:outline-yellow-500' : ''}`}>
+            className={twMerge(`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl`, item.gold ? 'outline-yellow-500 outline-2 dark:outline-yellow-500' : '')}>
             <div className="text-2xl flex flex-row flex-wrap items-center gap-x-4 justify-between w-full">
                 <div className="flex flex-row items-center justify-center font-semibold">
                     {item.title}

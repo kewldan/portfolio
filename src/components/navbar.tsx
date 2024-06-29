@@ -7,15 +7,12 @@ import {HiMenu} from "react-icons/hi";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 import ThemeButton from "@/components/themeToggle";
+import {twMerge} from "tailwind-merge";
 
 const navigation = [
     {name: 'Home', href: '/'},
     {name: 'Projects', href: '/projects'},
 ]
-
-function classNames(...classes: any[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function Example() {
     const pathname = usePathname();
@@ -48,7 +45,7 @@ export default function Example() {
                                             <Link
                                                 key={item.name}
                                                 href={item.href}
-                                                className={classNames(
+                                                className={twMerge(
                                                     pathname === item.href ? 'text-black dark:text-white' : 'text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300',
                                                     'rounded-md px-3 py-2 text-sm font-medium transition-colors'
                                                 )}
@@ -70,7 +67,7 @@ export default function Example() {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className={classNames(
+                                    className={twMerge(
                                         item.href === pathname ? 'text-black dark:text-white' : 'text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300',
                                         'block rounded-md px-3 py-2 text-base font-medium'
                                     )}
