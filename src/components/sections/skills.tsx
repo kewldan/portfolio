@@ -31,7 +31,16 @@ const stack: StackCardItem[] = [
     {type: 'os', name: 'Ubuntu', icon: 'ubuntu.svg'},
     {type: 'ide', name: 'WebStorm', icon: 'webstorm.svg'},
     {type: 'os', name: 'Windows', icon: 'windows.svg'}
-]
+];
+
+const phrases: Record<string, string> = {
+    0: 'IDK',
+    1: 'BAD',
+    2: 'NORMAL',
+    3: 'GOOD',
+    4: 'GREAT',
+    5: 'IMPECCABLE',
+}
 
 export default function Skills() {
     return (
@@ -56,7 +65,7 @@ export default function Skills() {
                                                    height={22}/>
                                             <span>{lang.name}</span>
                                         </div>
-                                        <SegmentedProgress value={lang.value}/>
+                                        <SegmentedProgress value={lang.value} phrases={phrases}/>
                                     </div>
                                 </li>
                             ))

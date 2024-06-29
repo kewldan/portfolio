@@ -13,7 +13,7 @@ export type StackCardItem = {
 
 export function StackCard({item}: { item: StackCardItem }) {
     return (
-        <Tilt glareEnable={true} glarePosition="all" scale={1.2} perspective={500}
+        <Tilt glareEnable={true} scale={1.2} perspective={500}
               className="outline outline-1 outline-neutral-600 rounded-md parallax-effect-img">
             <div className='inner-element w-full h-full flex flex-col items-center justify-between p-4 gap-2'>
                 <div

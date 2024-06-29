@@ -1,7 +1,7 @@
 import React from "react";
 
 const colors: Record<number, string> = {
-    0: '#2c2c2e',
+    0: '#d808d8',
     1: '#e63131',
     2: '#e68231',
     3: '#e6bc31',
@@ -9,14 +9,6 @@ const colors: Record<number, string> = {
     5: '#31c5e6',
 }
 
-const phrases: Record<string, string> = {
-    0: 'IDK',
-    1: 'BAD',
-    2: 'NORMAL',
-    3: 'GOOD',
-    4: 'GREAT',
-    5: 'IMPECCABLE',
-}
 
 function Segment({index, color}: { index: number, color: string | null }) {
     return (
@@ -37,7 +29,11 @@ function Segment({index, color}: { index: number, color: string | null }) {
     )
 }
 
-export default function SegmentedProgress({value}: { value: number }) {
+export default function SegmentedProgress({value, phrases, invertColor}: {
+    value: number,
+    phrases: Record<number, string>,
+    invertColor?: boolean
+}) {
     return (
         <div className='h-4 flex flex-row items-center relative w-full'>
             <span
@@ -45,7 +41,7 @@ export default function SegmentedProgress({value}: { value: number }) {
             {
                 Array.from({length: 5}).map((_, index) => (
                     <Segment key={`Progress-${index}`} index={index}
-                             color={index < value ? colors[value] : null}/>
+                             color={index < value ? colors[invertColor ? 5 - value : value] : null}/>
                 ))
             }
         </div>
