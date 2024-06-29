@@ -81,10 +81,9 @@ const config = {
         plugin(function ({matchUtilities, theme}) {
             matchUtilities(
                 {
-                    // Class name
                     'font-outline': (value) => {
                         return {
-                            "-webkit-text-stroke": `0.25rem ${value || "#474757"}`
+                            "-webkit-text-stroke": `0.04em ${value || "#474757"}`
                         }
                     },
                 },
