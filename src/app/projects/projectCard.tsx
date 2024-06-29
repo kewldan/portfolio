@@ -10,7 +10,6 @@ import {
     ProjectStatus,
     projectStatusColors
 } from "@/app/projects/types";
-import {Receipt} from "lucide-react";
 import SegmentedProgress from "@/components/segmentedProgress";
 
 const phrases: Record<string, string> = {
