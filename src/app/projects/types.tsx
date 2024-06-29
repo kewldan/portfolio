@@ -1,6 +1,6 @@
 import {GB, RU} from "country-flag-icons/react/3x2";
-import {TbBrandCpp, TbBrandPython, TbBrandTypescript} from "react-icons/tb";
 import React from "react";
+import Image from "next/image";
 
 
 export type ProjectStatus = 'paused' | 'in-dev' | 'released' | 'maintained' | 'closed';
@@ -23,7 +23,7 @@ export const projectLocales: Record<ProjectLocale, React.ReactNode> = {
 export type ProjectLanguage = 'python' | 'cxx' | 'ts';
 
 export const projectLanguages: Record<ProjectLanguage, React.ReactNode> = {
-    'python': <TbBrandPython size={26}/>,
-    'cxx': <TbBrandCpp size={26}/>,
-    'ts': <TbBrandTypescript size={26}/>
+    'python': <Image src="/icons/langs/python.svg" width={26} height={26} alt="Python logo"/>,
+    'cxx': <Image src="/icons/langs/cpp.svg" width={26} height={26} alt="C++ logo"/>,
+    'ts': <Image src="/icons/langs/typescript.svg" width={26} height={26} alt="Typescript logo"/>
 }

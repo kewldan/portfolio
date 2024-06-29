@@ -14,18 +14,18 @@ import {Receipt} from "lucide-react";
 
 
 export default function ProjectCard({children, title, language, localization, image, connections, status, commercial}: {
-    children: React.ReactNode,
-    title: string,
-    language: ProjectLanguage,
-    localization: ProjectLocale,
-    image: string,
-    connections: React.ReactNode[],
-    status?: ProjectStatus,
-    commercial?: boolean
+    children: React.ReactNode;
+    title: string;
+    language: ProjectLanguage;
+    localization: ProjectLocale;
+    image: string;
+    connections: React.ReactNode[];
+    status?: ProjectStatus;
+    commercial?: boolean;
 }) {
     return (
         <div
-            className={`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl max-w-md`}>
+            className={`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl`}>
             <div className="text-2xl flex flex-row flex-wrap items-center gap-x-4 justify-between w-full">
                 <div className="flex flex-row items-center justify-center font-semibold">
                     {title}
@@ -35,7 +35,7 @@ export default function ProjectCard({children, title, language, localization, im
                     {
                         status && (
                             <span style={{backgroundColor: projectStatusColors[status]}}
-                                  className='rounded-full px-4 py-0.5 text-center text-white font-bold'>
+                                  className='rounded-full px-4 py-0.5 text-center text-white font-bold select-none'>
                         {status.toUpperCase()}
                     </span>
                         )
