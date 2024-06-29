@@ -2,11 +2,11 @@ import React from "react";
 
 const colors: Record<number, string> = {
     0: '#2c2c2e',
-    1: '#a11714',
-    2: '#b3541c',
-    3: '#b58c1c',
-    4: '#008c47',
-    5: '#006d9c',
+    1: '#e63131',
+    2: '#e68231',
+    3: '#e6bc31',
+    4: '#31e664',
+    5: '#31c5e6',
 }
 
 const phrases: Record<string, string> = {
@@ -20,16 +20,16 @@ const phrases: Record<string, string> = {
 
 function Segment({index, color}: { index: number, color: string | null }) {
     return (
-        <div className='w-1/5 h-full bg-neutral-400'
+        <div className='w-1/5 h-full bg-neutral-200 dark:bg-[#2c2c2e]'
              style={{
                  ...(color ? {backgroundColor: color} : {}),
                  ...(index === 0 ? {
-                     borderTopLeftRadius: '1rem',
-                     borderBottomLeftRadius: '1rem'
+                     borderTopLeftRadius: '10rem',
+                     borderBottomLeftRadius: '10rem'
                  } : {}),
                  ...(index === 4 ? {
-                     borderTopRightRadius: '1rem',
-                     borderBottomRightRadius: '1rem'
+                     borderTopRightRadius: '10rem',
+                     borderBottomRightRadius: '10rem'
                  } : {})
              }}>
 
@@ -39,9 +39,9 @@ function Segment({index, color}: { index: number, color: string | null }) {
 
 export default function SegmentedProgress({value}: { value: number }) {
     return (
-        <div className='h-4 flex flex-row items-center divide-x divide-neutral-300 dark:divide-neutral-600 relative'>
+        <div className='h-4 flex flex-row items-center relative w-full'>
             <span
-                className='w-full justify-center items-center flex flex-col absolute font-bold text-xs text-white'>{phrases[value]}</span>
+                className='w-full justify-center items-center flex flex-col absolute font-medium text-xs tracking-tight'>{phrases[value]}</span>
             {
                 Array.from({length: 5}).map((_, index) => (
                     <Segment key={`Progress-${index}`} index={index}

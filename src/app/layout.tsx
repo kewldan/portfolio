@@ -3,8 +3,8 @@ import '@/app/globals.css'
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import React from "react";
-import Navbar from "@/components/Navbar";
-import Socials from "@/components/Socials";
+import Navbar from "@/components/navbar";
+import Socials from "@/components/socials";
 import {ThemeProvider as NextThemesProvider} from "next-themes"
 
 const inter = Inter({subsets: ['latin', 'cyrillic'], display: 'fallback'})

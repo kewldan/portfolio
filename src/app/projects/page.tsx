@@ -1,7 +1,7 @@
-import ProjectCategory from "@/app/projects/ProjectCategory";
+import ProjectCategory from "@/app/projects/projectCategory";
 import React, {ReactNode} from "react";
 import {ProjectLanguage, ProjectLocale, ProjectStatus,} from "@/app/projects/types";
-import ProjectCard from "@/app/projects/ProjectCard";
+import ProjectCard from "@/app/projects/projectCard";
 import Connection from "@/app/projects/connection";
 import {FaGithub, FaItchIo, FaLink, FaTelegram} from "react-icons/fa6";
 import {BiLockAlt} from "react-icons/bi";

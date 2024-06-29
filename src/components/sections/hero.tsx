@@ -1,17 +1,14 @@
 import React from 'react';
-import PhotoGallery from "@/components/PhotoGallery";
+import PhotoGallery from "@/components/photoGallery";
 
 
 export default function Hero() {
     return (
-        <main className='flex flex-col items-center gap-y-3 p-8 min-h-[40rem] w-full relative'>
-            <h1 className="absolute -z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background hidden lg:block">
-                I LOVE<br/>PROGRAMMING
-            </h1>
-            <h1 className="absolute -z-10 text-6xl font-extrabold top-4 right-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background hidden md:block">
+        <main className='flex flex-col items-center justify-center gap-y-3 p-8 w-full relative screen-slide'>
+            <h1 className="-z-10 text-6xl font-extrabold w-full text-right tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
                 CODING IS<br/> MY <span className='text-red'>PASSION</span>
             </h1>
-            <div className="flex flex-row items-center justify-between flex-wrap gap-6">
+            <div className="flex flex-row items-center justify-center flex-wrap gap-6">
                 <PhotoGallery/>
 
                 <div className="flex flex-col items-center grow">
@@ -23,6 +20,9 @@ export default function Hero() {
                     </span>
                 </div>
             </div>
+            <h1 className="-z-10 text-6xl font-extrabold w-full tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
+                I LOVE<br/>PROGRAMMING
+            </h1>
         </main>
     )
 }
