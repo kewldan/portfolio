@@ -118,7 +118,7 @@ const projects: Record<string, ProjectCardItem[]> = {
     'Bots': [
         {
             title: 'ShopBot',
-            image: '/projects/ShopBot.png',
+            image: '/projects/ShopBot.gif',
             language: 'python',
             localization: 'ru',
             connections: [connections.telegram('https://t.me/FreeShopPain_Bot')],
@@ -132,7 +132,7 @@ const projects: Record<string, ProjectCardItem[]> = {
             title: 'SolverBot',
             language: 'python',
             connections: [connections.telegram('https://t.me/kwld_solver_bot')],
-            image: '/projects/SolverBot.png',
+            image: '/projects/SolverBot.gif',
             localization: 'ru',
             status: 'released',
             description: 'Bot for solving РЕШУ ОГЭ/ВПР/ЕГЭ tests',
@@ -171,7 +171,7 @@ const projects: Record<string, ProjectCardItem[]> = {
         },
         {
             title: 'Cum bot',
-            image: '/projects/CumBot.png',
+            image: '/projects/CumBot.gif',
             language: 'python',
             connections: [connections.telegram('https://t.me/kwld_cum_bot')],
             localization: 'ru',
@@ -183,7 +183,7 @@ const projects: Record<string, ProjectCardItem[]> = {
     'Web': [
         {
             title: 'GradeApp',
-            image: '/projects/GradeApp.png',
+            image: '/projects/GradeApp.gif',
             language: 'ts',
             connections: [connections.telegram('https://t.me/grade_app_bot')],
             localization: 'ru',
