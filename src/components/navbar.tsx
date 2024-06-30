@@ -9,8 +9,6 @@ import Link from "next/link";
 import ThemeButton from "@/components/themeToggle";
 import {twMerge} from "tailwind-merge";
 import {useSession} from "next-auth/react";
-import {Button} from "@/components/ui/button"
-import {Plus} from "lucide-react";
 import ProjectModal from "@/app/projects/projectModal";
 
 const navigation = [
@@ -20,7 +18,7 @@ const navigation = [
 
 export default function Example() {
     const pathname = usePathname();
-    const session = useSession();
+    const {data: session} = useSession();
 
     return (
         <Disclosure as="nav" className="w-full outline outline-neutral-300 dark:outline-[#151518] outline-1">
@@ -63,9 +61,7 @@ export default function Example() {
                             </div>
                             <div className='flex flex-row items-center gap-2'>
                                 <ThemeButton/>
-                                {session?.status === 'authenticated' && (
-                                    <ProjectModal/>
-                                )}
+                                {session && <ProjectModal/>}
                             </div>
                         </div>
                     </div>

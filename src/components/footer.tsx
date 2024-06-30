@@ -6,7 +6,7 @@ import {Button} from "./ui/button";
 import {signIn, signOut, useSession} from "next-auth/react";
 
 export default function Footer() {
-    const session = useSession();
+    const {data: session} = useSession();
 
     return (
         <footer className="w-full p-4 px-20 flex flex-row items-center justify-between max-w-[120rem]">
@@ -31,7 +31,7 @@ export default function Footer() {
                 </a>
             </div>
             {
-                session?.data?.user ? (
+                session ? (
                     <Button variant="link" onClick={() => signOut()}>
                         Sign out
                     </Button>

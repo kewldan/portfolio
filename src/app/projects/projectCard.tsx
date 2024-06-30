@@ -22,7 +22,7 @@ const phrases: Record<string, string> = {
 }
 
 export default function ProjectCard({item}: { item: Project & { connections: ProjectConnection[] } }) {
-    const session = useSession();
+    const {data: session} = useSession();
 
     return (
         <div
@@ -45,10 +45,10 @@ export default function ProjectCard({item}: { item: Project & { connections: Pro
                     {projectLocales[item.localization]}
                     {/*<span className="font-medium tracking-tighter text-lg">{`$${item.cost}`}</span>*/}
                     {
-                        session.status === 'authenticated' && <ProjectModal item={item}/>
+                        session && <ProjectModal item={item}/>
                     }
                     {
-                        session.status === 'authenticated' && (
+                        session && (
                             <Button size="icon" variant="destructive" onClick={() => {
                                 deleteProject(item.id).then()
                             }}>
