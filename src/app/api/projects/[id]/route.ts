@@ -58,7 +58,7 @@ export async function POST(request: NextRequest, {params}: { params: { id: strin
     return NextResponse.json({type: 'success'});
 }
 
-export async function DELETE({params}: { params: { id: string } }) {
+export async function DELETE(_: NextRequest, {params}: { params: { id: string } }) {
     const session = await getServerSession();
 
     if (!session)
