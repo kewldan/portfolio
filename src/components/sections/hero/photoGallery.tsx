@@ -12,7 +12,12 @@ const photos = [
     '/photos/4.jpg',
 ]
 
-export default function PhotoGallery() {
+/**
+ * Renders a photo gallery component.
+ *
+ * @return {React.ReactNode} The rendered photo gallery component.
+ */
+export default function PhotoGallery(): React.ReactNode {
     const plugin = useRef(
         Autoplay({delay: 2000, stopOnInteraction: true})
     );

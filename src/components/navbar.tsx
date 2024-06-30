@@ -1,6 +1,6 @@
 'use client';
 
-import React, {Fragment} from 'react'
+import React from 'react'
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'
 import {FaXmark} from "react-icons/fa6";
 import {HiMenu} from "react-icons/hi";
@@ -8,6 +8,10 @@ import {usePathname} from "next/navigation";
 import Link from "next/link";
 import ThemeButton from "@/components/themeToggle";
 import {twMerge} from "tailwind-merge";
+import {useSession} from "next-auth/react";
+import {Button} from "@/components/ui/button"
+import {Plus} from "lucide-react";
+import ProjectModal from "@/app/projects/projectModal";
 
 const navigation = [
     {name: 'Home', href: '/'},
@@ -16,6 +20,7 @@ const navigation = [
 
 export default function Example() {
     const pathname = usePathname();
+    const session = useSession();
 
     return (
         <Disclosure as="nav" className="w-full outline outline-neutral-300 dark:outline-[#151518] outline-1">
@@ -56,7 +61,12 @@ export default function Example() {
                                     </div>
                                 </div>
                             </div>
-                            <ThemeButton/>
+                            <div className='flex flex-row items-center gap-2'>
+                                <ThemeButton/>
+                                {session?.status === 'authenticated' && (
+                                    <ProjectModal/>
+                                )}
+                            </div>
                         </div>
                     </div>
 

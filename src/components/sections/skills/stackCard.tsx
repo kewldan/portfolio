@@ -5,14 +5,20 @@ import React from "react";
 import Tilt from 'react-parallax-tilt';
 import {twMerge} from "tailwind-merge";
 
-export type StackCardItem = {
+export interface StackCardItem {
     type: 'framework' | 'lib' | 'os' | 'service' | 'software' | 'ide' | 'db';
     name: string;
     icon: string;
     needToInvert?: boolean;
 }
 
-export function StackCard({item}: { item: StackCardItem }) {
+/**
+ * Renders a StackCard component based on the provided StackCardItem.
+ *
+ * @param {StackCardItem} item - The StackCardItem object containing information for rendering the card.
+ * @return {JSX.Element} The rendered StackCard component.
+ */
+export function StackCard({item}: { item: StackCardItem }): React.ReactNode {
     return (
         <Tilt glareEnable={true} scale={1.2} perspective={500}
               className="outline outline-1 outline-neutral-600 rounded-md parallax-effect-img">

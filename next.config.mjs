@@ -3,6 +3,14 @@ const nextConfig = {
     reactStrictMode: true,
     poweredByHeader: false,
     output: 'standalone',
+    images: {
+        remotePatterns: [
+            {
+                hostname: 'cdn.kyl-team.ru',
+                protocol: 'https',
+            }
+        ]
+    },
     async redirects() {
         return [
             {

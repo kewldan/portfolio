@@ -1,10 +1,18 @@
-import {FaGithub, FaNpm, FaStackOverflow, FaTelegram, FaVk} from "react-icons/fa6";
-import React from "react";
+'use client';
 
-export default function Socials({children}: { children: React.ReactNode }) {
+import React from "react";
+import {FaGithub, FaNpm, FaStackOverflow, FaTelegram, FaVk} from "react-icons/fa6";
+import {Button} from "./ui/button";
+import {signIn, signOut, useSession} from "next-auth/react";
+
+export default function Footer() {
+    const session = useSession();
+
     return (
-        <div className='w-full flex flex-col justify-between items-center grow h-full pb-4'>
-            {children}
+        <footer className="w-full p-4 px-20 flex flex-row items-center justify-between max-w-[120rem]">
+            <span className='dark:text-neutral-700'>
+                &copy; 2023-2024 Daniil Tenishev. All rights reserved.
+            </span>
             <div className="flex flex-row items-center justify-center text-neutral-600 gap-x-4">
                 <a href="/telegram" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
                     <FaTelegram size={26}/>
@@ -22,6 +30,17 @@ export default function Socials({children}: { children: React.ReactNode }) {
                     <FaNpm size={26}/>
                 </a>
             </div>
-        </div>
+            {
+                session?.data?.user ? (
+                    <Button variant="link" onClick={() => signOut()}>
+                        Sign out
+                    </Button>
+                ) : (
+                    <Button variant="link" onClick={() => signIn()}>
+                        Sign in
+                    </Button>
+                )
+            }
+        </footer>
     )
 }

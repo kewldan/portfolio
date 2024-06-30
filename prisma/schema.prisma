@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum ProjectLanguage {
+  PYTHON
+  CPP
+  TYPESCRIPT
+}
+
+enum ProjectLocalization {
+  RU
+  EN
+}
+
+enum ProjectStatus {
+  PLANNED
+  WIP
+  PAUSED
+  INTERRUPTED
+  RELEASED
+  ABANDONED
+}
+
+enum ProjectCategory {
+  GAME
+  SOFTWARE
+  BOT
+  WEB
+  LIBRARY
+}
+
+enum ProjectMonetization {
+  NONE
+  ADS
+  SUBSCRIPTION
+  PURCHASE
+}
+
+model Project {
+  id           String              @id @default(auto()) @map("_id") @db.ObjectId
+  category     ProjectCategory
+  title        String
+  language     ProjectLanguage
+  localization ProjectLocalization
+  image        String
+  difficulty   Int
+  connections  ProjectConnection[]
+  description  String
+  status       ProjectStatus
+  primary      Boolean
+  monetization ProjectMonetization
+  timestamp    DateTime            @default(now())
+}
+
+enum ProjectConnectionIcon {
+  GITHUB
+  CONTACT
+  TELEGRAM
+  DOCS
+  OPEN
+  ITCH
+}
+
+model ProjectConnection {
+  id        String                @id @default(auto()) @map("_id") @db.ObjectId
+  project   Project               @relation(fields: [projectId], references: [id])
+  projectId String                @db.ObjectId
+  icon      ProjectConnectionIcon
+  href      String
+}

@@ -2,16 +2,15 @@
 
 import React from "react";
 import Image from "next/image"
-import {
-    ProjectLanguage,
-    projectLanguages,
-    ProjectLocale,
-    projectLocales,
-    ProjectStatus,
-    projectStatusColors
-} from "@/app/projects/types";
+import {projectLanguages, projectLocales, projectStatusColors} from "@/app/projects/types";
 import SegmentedProgress from "@/components/segmentedProgress";
 import {twMerge} from "tailwind-merge";
+import {useSession} from "next-auth/react";
+import ProjectModal from "@/app/projects/projectModal";
+import {Project, ProjectConnection} from "@prisma/client";
+import {Trash} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {deleteProject} from "@/lib/api";
 
 const phrases: Record<string, string> = {
     0: 'Easy peasy',
@@ -22,24 +21,13 @@ const phrases: Record<string, string> = {
     5: 'Impossible',
 }
 
-export type ProjectCardItem = {
-    title: string;
-    language: ProjectLanguage;
-    localization: ProjectLocale;
-    image: string;
-    difficulty: number;
-    description: React.ReactNode;
-    connections: React.ReactNode[];
-    status: ProjectStatus;
-    cost?: number;
-    gold?: boolean;
-}
+export default function ProjectCard({item}: { item: Project & { connections: ProjectConnection[] } }) {
+    const session = useSession();
 
-export default function ProjectCard({item}: { item: ProjectCardItem }) {
     return (
         <div
-            className={twMerge(`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl`, item.gold ? 'outline-yellow-500 outline-2 dark:outline-yellow-500' : '')}>
-            <div className="text-2xl flex flex-row flex-wrap items-center gap-x-4 justify-between w-full">
+            className={twMerge(`flex flex-col items-center justify-between gap-y-4 w-full outline outline-neutral-300 dark:outline-neutral-900 outline-1 p-4 rounded-xl min-w-[25rem]`, item.primary ? 'outline-yellow-500 outline-2 dark:outline-yellow-500' : '')}>
+            <div className="text-2xl flex flex-row items-center gap-x-4 justify-between w-full">
                 <div className="flex flex-row items-center justify-center font-semibold">
                     {item.title}
                 </div>
@@ -55,7 +43,19 @@ export default function ProjectCard({item}: { item: ProjectCardItem }) {
                     }
                     {projectLanguages[item.language]}
                     {projectLocales[item.localization]}
-                    <span className="font-medium tracking-tighter text-lg">{item.cost && `$${item.cost}`}</span>
+                    {/*<span className="font-medium tracking-tighter text-lg">{`$${item.cost}`}</span>*/}
+                    {
+                        session.status === 'authenticated' && <ProjectModal item={item}/>
+                    }
+                    {
+                        session.status === 'authenticated' && (
+                            <Button size="icon" variant="destructive" onClick={() => {
+                                deleteProject(item.id).then()
+                            }}>
+                                <Trash/>
+                            </Button>
+                        )
+                    }
                 </div>
             </div>
 
@@ -75,7 +75,7 @@ export default function ProjectCard({item}: { item: ProjectCardItem }) {
                 <div className='flex flex-row items-center gap-x-2 w-full'>
                     {item.connections.map((connection, index) =>
                         <div key={`${item.title}-connection-${index}`} className='grow w-full'>
-                            {connection}
+                            {connection.icon}
                         </div>
                     )}
                 </div>

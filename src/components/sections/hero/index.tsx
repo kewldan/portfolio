@@ -1,10 +1,10 @@
 import React from 'react';
-import PhotoGallery from "@/components/photoGallery";
+import PhotoGallery from "./photoGallery";
 
 
 export default function Hero() {
     return (
-        <main className='flex flex-col items-center justify-center gap-y-3 p-8 w-full relative screen-slide'>
+        <main className='flex flex-col items-center justify-between gap-y-3 p-8 w-full relative screen-slide'>
             <h1 className="-z-10 text-6xl font-extrabold w-full text-right tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
                 CODING IS<br/> MY <span className='text-red'>PASSION</span>
             </h1>

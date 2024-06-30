@@ -1,7 +1,7 @@
 import React from "react";
 import SegmentedProgress from "@/components/segmentedProgress";
 import Image from "next/image";
-import {StackCard, StackCardItem} from "@/components/StackCard";
+import {StackCard, StackCardItem} from "./stackCard";
 
 const languages = [
     {name: 'Python', icon: 'python.svg', value: 5},
