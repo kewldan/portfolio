@@ -4,3 +4,13 @@ services:
     restart: unless-stopped
     expose:
       - 80
+    networks:
+      - virtual-hosts
+    labels:
+      - traefik.http.routers.kewldan.rule=Host(`kewldan.ru`)
+      - traefik.enable=true
+      - traefik.http.services.kewldan.loadbalancer.server.port=80
+
+networks:
+  virtual-hosts:
+    external: true
