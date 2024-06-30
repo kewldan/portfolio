@@ -1,10 +1,10 @@
 import Credentials from "next-auth/providers/credentials";
 import Github from "next-auth/providers/github";
-import NextAuth, {NextAuthOptions} from "next-auth";
+import NextAuth, {AuthOptions} from "next-auth";
 import {env} from "@/lib/env";
 
 
-export default NextAuth({
+const options: AuthOptions = {
     debug: env.NODE_ENV === 'development',
     session: {
         strategy: 'jwt'
@@ -28,5 +28,12 @@ export default NextAuth({
             clientId: env.NEXT_GITHUB_ID,
             clientSecret: env.NEXT_GITHUB_SECRET
         })
-    ],
-} satisfies NextAuthOptions);
+    ]
+}
+
+const authClient = {
+    handler: NextAuth(options),
+    options
+}
+
+export default authClient;
