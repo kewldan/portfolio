@@ -6,9 +6,9 @@ import React from "react";
 import Navbar from "@/components/navbar";
 import {ThemeProvider as NextThemesProvider} from "next-themes"
 import {twMerge} from "tailwind-merge";
-import {getSession} from "next-auth/react";
 import AuthProvider from "@/components/authProvider";
 import Footer from "@/components/footer";
+import {getServerSession} from "next-auth";
 
 const inter = Inter({subsets: ['latin', 'cyrillic'], display: 'fallback'})
 
@@ -32,7 +32,7 @@ export default async function RootLayout({
                 defaultTheme="dark"
                 enableSystem
             >
-                <AuthProvider session={await getSession()}>
+                <AuthProvider session={await getServerSession()}>
                     <Navbar/>
                     {children}
                     <Footer/>
