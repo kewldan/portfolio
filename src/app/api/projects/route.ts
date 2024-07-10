@@ -5,7 +5,6 @@ import {getServerSession} from "next-auth";
 import {z} from "zod";
 import {projectData} from "@/app/api/projects/types";
 
-
 const createProjectBody = z.object({
     data: projectData
 })
@@ -22,10 +21,16 @@ export async function PUT(request: NextRequest) {
         return NextResponse.json({type: 'error'}, {status: 400});
     const {data} = body;
 
-    const document = await prisma.project.create({
+    const split = data.imageName.split(".");
+
+    const filename = `projects/${Date.now()}-${split[split.length - 1]}`
+
+    await saveFile(Buffer.from(data.image, 'base64'), filename)
+
+    await prisma.project.create({
         data: {
             title: data.title,
-            image: 'AWAITING CONFIRMATION',
+            image: `https://cdn.kyl-team.ru/${filename}`,
             category: data.category,
             description: data.description,
             difficulty: data.difficulty,
@@ -34,19 +39,6 @@ export async function PUT(request: NextRequest) {
             monetization: data.monetization,
             localization: data.localization,
             primary: data.primary
-        }
-    });
-
-    const filename = `projects/${Math.floor(Math.random() * 1000000)}-${data.imageName}`
-
-    await saveFile(Buffer.from(data.image, 'base64'), filename)
-
-    await prisma.project.update({
-        where: {
-            id: document.id
-        },
-        data: {
-            image: `https://cdn.kyl-team.ru/${filename}`
         }
     });
 
