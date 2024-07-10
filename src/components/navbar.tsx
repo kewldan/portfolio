@@ -9,7 +9,7 @@ import Link from "next/link";
 import ThemeButton from "@/components/themeToggle";
 import {twMerge} from "tailwind-merge";
 import {useSession} from "next-auth/react";
-import ProjectModal from "@/app/projects/projectModal";
+import ProjectModal from "@/components/projectModal";
 
 const navigation = [
     {name: 'Home', href: '/'},

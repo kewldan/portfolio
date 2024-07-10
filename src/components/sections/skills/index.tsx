@@ -22,12 +22,11 @@ const stack: StackCardItem[] = [
     {type: 'service', name: 'Cloudflare', icon: 'cloudflare.svg'},
     {type: 'software', name: 'Docker', icon: 'docker.svg'},
     {type: 'service', name: 'Github', icon: 'github.svg', needToInvert: true},
-    {type: 'ide', name: 'OpenGL', icon: 'opengl.svg'},
     {type: 'lib', name: 'Intellij', icon: 'intellij.svg'},
     {type: 'db', name: 'MongoDB', icon: 'mongodb.svg'},
     {type: 'software', name: 'Nginx', icon: 'nginx.svg'},
     {type: 'ide', name: 'Pycharm', icon: 'pycharm.svg'},
-    {type: 'software', name: 'Traeffik', icon: 'traeffik.svg'},
+    {type: 'software', name: 'Traefik', icon: 'traefik.svg'},
     {type: 'os', name: 'Ubuntu', icon: 'ubuntu.svg'},
     {type: 'ide', name: 'WebStorm', icon: 'webstorm.svg'},
     {type: 'os', name: 'Windows', icon: 'windows.svg'}

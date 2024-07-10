@@ -6,11 +6,12 @@ import {projectLanguages, projectLocales, projectStatusColors} from "@/app/proje
 import SegmentedProgress from "@/components/segmentedProgress";
 import {twMerge} from "tailwind-merge";
 import {useSession} from "next-auth/react";
-import ProjectModal from "@/app/projects/projectModal";
+import ProjectModal from "@/components/projectModal";
 import {Project, ProjectConnection} from "@prisma/client";
 import {Trash} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {deleteProject} from "@/lib/api";
+import {useRouter} from "next/navigation";
 
 const phrases: Record<string, string> = {
     0: 'Easy peasy',
@@ -21,8 +22,11 @@ const phrases: Record<string, string> = {
     5: 'Impossible',
 }
 
-export default function ProjectCard({item}: { item: Project & { connections: ProjectConnection[] } }) {
+export default function ProjectCard({item}: {
+    item: Project & { connections: ProjectConnection[] }
+}) {
     const {data: session} = useSession();
+    const router = useRouter();
 
     return (
         <div
@@ -49,8 +53,8 @@ export default function ProjectCard({item}: { item: Project & { connections: Pro
                     }
                     {
                         session && (
-                            <Button size="icon" variant="destructive" onClick={() => {
-                                deleteProject(item.id).then()
+                            <Button size="icon" variant="secondary" className="w-10" onClick={() => {
+                                deleteProject(item.id).then(() => router.refresh());
                             }}>
                                 <Trash/>
                             </Button>
