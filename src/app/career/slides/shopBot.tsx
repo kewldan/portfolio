@@ -23,12 +23,12 @@ export default function ShopBot() {
     const t = useTranslations('ShopBot');
 
     return (
-        <div className="grid grid-cols-2 w-full slide">
+        <div className="grid grid-cols-2 w-full slide" id="FreeShopBot">
             <div className="flex flex-col items-center justify-center gap-3">
                 <div className="w-full max-w-xl flex flex-col items-start gap-4">
-                    <h2 className="font-extrabold tracking-tighter text-7xl">
+                    <Link href="#FreeShopBot" className="font-extrabold tracking-tighter text-7xl">
                         FreeShop Bot
-                    </h2>
+                    </Link>
                     <span>
                         {t('description')}
                     </span>
@@ -76,7 +76,7 @@ export default function ShopBot() {
             </div>
             <div className="w-full flex flex-col items-center justify-center gap-4">
                 <h3 className="text-4xl font-bold">
-                    Технологии
+                    {t('tech')}
                 </h3>
                 <div className="flex flex-row flex-wrap gap-4 justify-center max-w-2xl">
                     {
