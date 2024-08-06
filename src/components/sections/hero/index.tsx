@@ -5,8 +5,8 @@ import PhotoGallery from "./photoGallery";
 export default function Hero() {
     return (
         <main className='flex flex-col items-center justify-between gap-y-3 p-8 w-full relative screen-slide'>
-            <h1 className="-z-10 text-6xl font-extrabold w-full text-right tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
-                CODING IS<br/> MY <span className='text-red'>PASSION</span>
+            <h1 className="-z-10 text-6xl font-extrabold select-none text-right tracking-tight self-end lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background max-w-3xl">
+                CODING IS MY PASSION
             </h1>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                 <PhotoGallery/>
@@ -20,8 +20,8 @@ export default function Hero() {
                     </span>
                 </div>
             </div>
-            <h1 className="-z-10 text-6xl font-extrabold w-full tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
-                I LOVE<br/>PROGRAMMING
+            <h1 className="-z-10 text-6xl font-extrabold select-none tracking-tight self-start lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background max-w-3xl">
+                I LOVE PROG&shy;RAMMING
             </h1>
         </main>
     )

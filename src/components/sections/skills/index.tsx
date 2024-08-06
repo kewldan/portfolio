@@ -29,7 +29,12 @@ const stack: StackCardItem[] = [
     {type: 'software', name: 'Traefik', icon: 'traefik.svg'},
     {type: 'os', name: 'Ubuntu', icon: 'ubuntu.svg'},
     {type: 'ide', name: 'WebStorm', icon: 'webstorm.svg'},
-    {type: 'os', name: 'Windows', icon: 'windows.svg'}
+    {type: 'os', name: 'Windows', icon: 'windows.svg'},
+    {type: 'os', name: 'Android', icon: 'android.svg'},
+    {type: 'framework', name: 'Redis', icon: 'redis.svg'},
+    {type: 'software', name: 'KVM', icon: 'kvm.svg'},
+    {type: 'lib', name: 'Beanie', icon: 'beanie.svg'},
+    {type: 'software', name: 'Notion', icon: 'notion.svg', needToInvert: true}
 ];
 
 const phrases: Record<string, string> = {
@@ -45,8 +50,8 @@ export default function Skills() {
     return (
         <section
             className='w-full min-h-[40rem] relative'>
-            <div className="p-8 grid grid-cols-1 xl:grid-cols-4">
-                <div className="p-8">
+            <div className="p-4 grid grid-cols-1 xl:grid-cols-4">
+                <div className="p-4">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
                         Hard Skills
                     </h1>
@@ -71,7 +76,7 @@ export default function Skills() {
                         }
                     </ul>
                 </div>
-                <div className="p-8 h-full">
+                <div className="p-4 h-full">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
                         Soft Skills
                     </h1>
@@ -85,7 +90,7 @@ export default function Skills() {
                     </ul>
                     <span className='text-xs'>And more!</span>
                 </div>
-                <div className="p-8 xl:col-span-2 flex flex-col gap-8">
+                <div className="p-4 xl:col-span-2 flex flex-col gap-8">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
                         Tech Stack
                     </h1>

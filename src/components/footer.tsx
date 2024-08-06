@@ -9,7 +9,7 @@ export default function Footer() {
     const {data: session} = useSession();
 
     return (
-        <footer className="w-full p-4 px-20 flex flex-row items-center justify-between max-w-[120rem]">
+        <footer className="w-full p-4 px-20 flex flex-row flex-wrap gap-2 items-center justify-between max-w-[120rem]">
             <span className='dark:text-neutral-700'>
                 &copy; 2023-2024 Daniil Tenishev. All rights reserved.
             </span>
