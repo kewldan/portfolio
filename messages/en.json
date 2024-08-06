@@ -19,6 +19,15 @@
     "hierarchy": "Created a hierarchical database, with items that have a unique ID",
     "about": "The Telegram bot is divided into 2 parts: management, where all the controls are located, and client side, where the purchase interface is written"
   },
+  "SolverBot": {
+    "description": "Bot, for solving variants from the Sdam GIA service",
+    "details": "The project was completely invented and developed by me. I was able to bypass many of the site's defenses.",
+    "now": "Waiting for the new school year 2024/2025",
+    "solutions": "Solutions Used",
+    "hierarchy": "Created a database of all service tasks (More than 400k)",
+    "tech": "Technologies",
+    "about": "The bot receives all tasks from any variant (task list) on the service, and then sends back solutions and answers to all tasks"
+  },
   "Locales": {
     "en": "English",
     "ru": "Russian"
