@@ -11,6 +11,7 @@ RUN npm ci
 ENV NODE_ENV=production
 
 COPY next.config.mjs .env postcss.config.js tailwind.config.ts tsconfig.json ./
+COPY ./messages ./messages
 COPY ./public ./public
 COPY ./src ./src
 
