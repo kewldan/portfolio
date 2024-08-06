@@ -23,7 +23,7 @@ export default function Example() {
     const {data: session} = useSession();
 
     return (
-        <Disclosure as="nav" className="w-full sticky top-0 z-50 bg-background">
+        <Disclosure as="nav" className="w-full sticky top-0 z-50 bg-background outline-border outline-1 outline">
             {({open}) => (
                 <>
                     <div className="px-2 sm:px-6 lg:px-8 w-full">

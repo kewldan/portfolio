@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import {StackCard, StackCardItem} from "./stackCard";
+import {StackCard} from "./stackCard";
 import {useTranslations} from "next-intl";
 import {Progress} from "@/components/ui/progress";
+import {technologies} from "@/lib/technologies";
 
 const languages = [
     {name: 'Python', icon: 'python.svg', value: 5},
@@ -11,32 +12,6 @@ const languages = [
     {name: 'Java', icon: 'java.svg', value: 2},
     {name: 'Kotlin', icon: 'kotlin.svg', value: 1},
 ]
-
-const stack: StackCardItem[] = [
-    {type: 'framework', name: 'NextJS', icon: 'nextjs.svg', needToInvert: true},
-    {type: 'framework', name: 'FastAPI', icon: 'fastapi.svg'},
-    {type: 'software', name: 'Git', icon: 'git.svg'},
-    {type: 'framework', name: 'OpenGL', icon: 'opengl.svg'},
-    {type: 'framework', name: 'Prisma', icon: 'prisma.svg', needToInvert: true},
-    {type: 'framework', name: 'Tailwind', icon: 'tailwind.svg'},
-    {type: 'framework', name: 'Vulkan', icon: 'vulkan.svg'},
-    {type: 'service', name: 'Cloudflare', icon: 'cloudflare.svg'},
-    {type: 'software', name: 'Docker', icon: 'docker.svg'},
-    {type: 'service', name: 'Github', icon: 'github.svg', needToInvert: true},
-    {type: 'lib', name: 'Intellij', icon: 'intellij.svg'},
-    {type: 'db', name: 'MongoDB', icon: 'mongodb.svg'},
-    {type: 'software', name: 'Nginx', icon: 'nginx.svg'},
-    {type: 'ide', name: 'Pycharm', icon: 'pycharm.svg'},
-    {type: 'software', name: 'Traefik', icon: 'traefik.svg'},
-    {type: 'os', name: 'Ubuntu', icon: 'ubuntu.svg'},
-    {type: 'ide', name: 'WebStorm', icon: 'webstorm.svg'},
-    {type: 'os', name: 'Windows', icon: 'windows.svg'},
-    {type: 'os', name: 'Android', icon: 'android.svg'},
-    {type: 'framework', name: 'Redis', icon: 'redis.svg'},
-    {type: 'software', name: 'KVM', icon: 'kvm.svg'},
-    {type: 'lib', name: 'Beanie', icon: 'beanie.svg'},
-    {type: 'software', name: 'Notion', icon: 'notion.svg', needToInvert: true}
-];
 
 export default function Skills() {
     const t = useTranslations('Skills');
@@ -89,7 +64,7 @@ export default function Skills() {
                     </h1>
                     <div className="flex flex-row flex-wrap gap-4 justify-center">
                         {
-                            stack.sort((a, b) => a.type.localeCompare(b.type)).map(item => (
+                            Object.keys(technologies).map(k => technologies[k]).sort((a, b) => a.type.localeCompare(b.type)).map(item => (
                                 <StackCard item={item} key={item.name}/>
                             ))
                         }

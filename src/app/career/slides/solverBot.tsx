@@ -1,64 +1,69 @@
 import React from "react";
 import {useTranslations} from "next-intl";
 import {StackCard} from "@/components/sections/skills/stackCard";
-import {YouTubeEmbed} from '@next/third-parties/google'
 import Image from "next/image";
 import {CheckCircle} from "lucide-react";
-import CareerTemplate from "@/components/career/template";
 import CareerTitle from "@/components/career/title";
+import CareerDescription from "@/components/career/description";
+import {CareerButton} from "@/components/career/button";
 import {technologies, Technology} from "@/lib/technologies";
 import CareerList from "@/components/career/list";
-import {CareerButton} from "@/components/career/button";
-import CareerDescription from "@/components/career/description";
 import CareerDate from "@/components/career/date";
 import {CareerSlot} from "@/components/career/slot";
+import CareerTemplate from "@/components/career/template";
 import {CareerSlotTitle} from "@/components/career/slotTitle";
 
-const anchor = "LogicalSystem"
+const used: Technology[] = [
+    'docker',
+    'traefik',
+    'aiogram',
+    'git',
+    'github',
+    'pycharm',
+    'cloudflare',
+    'beanie',
+    'telegram'
+]
 
-const used: Technology[] = ['git', 'opengl', 'clion', 'vcpkg', 'glfw', 'github', 'ubuntu', 'windows'];
+const anchor = "SolverBot";
 
-export default function LogicalSystem() {
-    const t = useTranslations('LogicalSystem');
+export default function SolverBot() {
+    const t = useTranslations('SolverBot');
 
     return (
         <CareerTemplate anchor={anchor}>
             <CareerSlot>
                 <div className="w-full max-w-xl flex flex-col items-start gap-4">
-                    <CareerTitle anchor={anchor} name="Logical System" opensource={true}/>
-
+                    <CareerTitle anchor={anchor} name="Solver Bot"/>
                     <CareerDescription>
                         {t('description')}
                     </CareerDescription>
-
                     <CareerList items={[
                         t('about'),
-                        <p key={'details'}>{t('details')} <CheckCircle className="ml-1 inline"/></p>,
+                        <p key='details'>{t('details')} <CheckCircle className="ml-1 inline"/></p>,
                         t('now')
                     ]}/>
                     <CareerDate>
-                        21.04.2023 - 18.03.2024
+                        01.10.2023 - 22.05.2024
                     </CareerDate>
                 </div>
-                <div className="w-full max-w-xl grid grid-cols-2 gap-2">
-                    <CareerButton href="https://github.com/kewldan/LogicalSystemRemaster" name="Github"
-                                  icon="github.svg" iconNeedInvert={true}/>
-                    <CareerButton href="https://kewldan.itch.io/logical-system" name="Itch" icon="itch.svg"
+                <div className="w-full max-w-xl grid grid-cols-1 gap-2">
+                    <CareerButton href="https://t.me/kwld_solver_bot" name="Telegram" icon="telegram.svg"
                                   iconNeedInvert={true}/>
                 </div>
             </CareerSlot>
             <CareerSlot>
-                <Image src="https://cdn.kyl-team.ru/projects/125910-LogicalSystem.gif" alt="Project" width={800}
+                <Image src="https://cdn.kyl-team.ru/projects/SolverBot.gif" alt="Project" width={400}
                        height={400} className="object-fill rounded-md"/>
             </CareerSlot>
             <CareerSlot>
                 <div className="w-full max-w-xl flex flex-col items-center gap-4">
                     <CareerSlotTitle>
-                        {t('mention')}
+                        {t("solutions")}
                     </CareerSlotTitle>
-                    <div className='w-full p-2'>
-                        <YouTubeEmbed videoid="q_ve9SsuyvU" height={300} params="start=1547"/>
-                    </div>
+                    <CareerList items={[
+                        t("hierarchy")
+                    ]}/>
                 </div>
             </CareerSlot>
             <CareerSlot>

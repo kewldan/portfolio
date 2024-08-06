@@ -1,11 +1,13 @@
 {
+  "Career": {
+    "osi": "Open source available"
+  },
   "LogicalSystem": {
     "description": "Game written in C++",
     "details": "I took the project for the final project activity in 2024 for grade 9 and successfully passed it",
     "now": "The project requires improvement on the optimization and engine side. At the moment the project is abandoned",
     "mention": "Mentioned in YouTube video",
     "tech": "Technologies",
-    "osi": "Open source available",
     "about": "In this game, you can create any electrical circuits. This game is Turing complete. I was able to create a full 8 bit gated adder in half an hour! The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT and more."
   },
   "ShopBot": {

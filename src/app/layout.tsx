@@ -28,7 +28,7 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning className="scroll-smooth">
         <body
             className={twMerge(`bg-white dark:bg-[#09090b] overflow-x-hidden antialiased font-sans`, inter.className)}>
         <main className='min-h-screen flex flex-col items-center w-full justify-between'>
