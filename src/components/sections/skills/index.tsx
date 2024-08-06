@@ -3,7 +3,7 @@ import Image from "next/image";
 import {StackCard} from "./stackCard";
 import {useTranslations} from "next-intl";
 import {Progress} from "@/components/ui/progress";
-import {technologies} from "@/lib/technologies";
+import {technologies, Technology} from "@/lib/technologies";
 
 const languages = [
     {name: 'Python', icon: 'python.svg', value: 5},
@@ -64,7 +64,7 @@ export default function Skills() {
                     </h1>
                     <div className="flex flex-row flex-wrap gap-4 justify-center">
                         {
-                            Object.keys(technologies).map(k => technologies[k]).sort((a, b) => a.type.localeCompare(b.type)).map(item => (
+                            Object.keys(technologies).map(k => technologies[k as Technology]).sort((a, b) => a.type.localeCompare(b.type)).map(item => (
                                 <StackCard item={item} key={item.name}/>
                             ))
                         }
