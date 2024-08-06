@@ -1,7 +1,8 @@
 import React from "react";
-import SegmentedProgress from "@/components/segmentedProgress";
 import Image from "next/image";
 import {StackCard, StackCardItem} from "./stackCard";
+import {useTranslations} from "next-intl";
+import {Progress} from "@/components/ui/progress";
 
 const languages = [
     {name: 'Python', icon: 'python.svg', value: 5},
@@ -37,26 +38,19 @@ const stack: StackCardItem[] = [
     {type: 'software', name: 'Notion', icon: 'notion.svg', needToInvert: true}
 ];
 
-const phrases: Record<string, string> = {
-    0: 'IDK',
-    1: 'BAD',
-    2: 'NORMAL',
-    3: 'GOOD',
-    4: 'GREAT',
-    5: 'IMPECCABLE',
-}
-
 export default function Skills() {
+    const t = useTranslations('Skills');
+
     return (
         <section
             className='w-full min-h-[40rem] relative'>
             <div className="p-4 grid grid-cols-1 xl:grid-cols-4">
                 <div className="p-4">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-                        Hard Skills
+                        {t('hard')}
                     </h1>
                     <h3 className="mt-8 text-2xl font-semibold tracking-tight">
-                        Levels of knowledge of Programming languages
+                        {t('hard-about')}
                     </h3>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-3">
                         {
@@ -69,7 +63,7 @@ export default function Skills() {
                                                    height={22}/>
                                             <span>{lang.name}</span>
                                         </div>
-                                        <SegmentedProgress value={lang.value} phrases={phrases}/>
+                                        <Progress value={lang.value * 20} max={100}/>
                                     </div>
                                 </li>
                             ))
@@ -78,21 +72,20 @@ export default function Skills() {
                 </div>
                 <div className="p-4 h-full">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-                        Soft Skills
+                        {t('soft')}
                     </h1>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                        <li>Communication</li>
-                        <li>Teamwork</li>
-                        <li>Problem-solving</li>
-                        <li>Critical thinking</li>
-                        <li>Leadership</li>
-                        <li>Creativity</li>
+                        {
+                            t('soft-skills').split(',').map(v => (
+                                <li key={v}>{v}</li>
+                            ))
+                        }
                     </ul>
-                    <span className='text-xs'>And more!</span>
+                    <span className='text-xs'>{t('soft-more')}</span>
                 </div>
                 <div className="p-4 xl:col-span-2 flex flex-col gap-8">
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-                        Tech Stack
+                        {t('tech')}
                     </h1>
                     <div className="flex flex-row flex-wrap gap-4 justify-center">
                         {
@@ -104,7 +97,7 @@ export default function Skills() {
                 </div>
             </div>
             <h1 className="-z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background hidden lg:block select-none">
-                MADE WITH LOVE&NEXT.JS
+                {t('love')}
             </h1>
         </section>
     )

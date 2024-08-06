@@ -5,19 +5,16 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import React, {useRef} from "react";
 
-const photos = [
-    '/photos/1.jpg',
-    '/photos/2.jpg',
-    '/photos/3.jpg',
-    '/photos/4.jpg',
-]
-
 /**
  * Renders a photo gallery component.
  *
  * @return {React.ReactNode} The rendered photo gallery component.
  */
-export default function PhotoGallery(): React.ReactNode {
+export default function PhotoGallery({photos, width, height}: {
+    photos: string[];
+    width: number;
+    height: number
+}): React.ReactNode {
     const plugin = useRef(
         Autoplay({delay: 2000, stopOnInteraction: true})
     );
@@ -30,7 +27,7 @@ export default function PhotoGallery(): React.ReactNode {
                 <CarouselContent>
                     {photos.map((photo, index) => (
                         <CarouselItem key={`${photo}-${index}`} className='h-full'>
-                            <Image src={photo} alt={photo} width={480} height={640}
+                            <Image src={photo} alt={photo} width={width} height={height}
                                    className='object-fill rounded-md'/>
                         </CarouselItem>
                     ))}

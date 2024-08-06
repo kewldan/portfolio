@@ -9,6 +9,8 @@ import {twMerge} from "tailwind-merge";
 import AuthProvider from "@/components/authProvider";
 import Footer from "@/components/footer";
 import {getServerSession} from "next-auth";
+import {NextIntlClientProvider} from "next-intl";
+import {getLocale, getMessages} from "next-intl/server";
 
 const inter = Inter({subsets: ['latin', 'cyrillic'], display: 'fallback'})
 
@@ -22,22 +24,27 @@ export default async function RootLayout({
                                          }: {
     children: React.ReactNode
 }) {
+    const locale = await getLocale();
+    const messages = await getMessages();
+
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning>
         <body
-            className={twMerge(`bg-white dark:bg-[#09090b] overflow-x-hidden w-full antialiased font-sans`, inter.className)}>
+            className={twMerge(`bg-white dark:bg-[#09090b] overflow-x-hidden antialiased font-sans`, inter.className)}>
         <main className='min-h-screen flex flex-col items-center w-full justify-between'>
-            <NextThemesProvider
-                attribute="class"
-                defaultTheme="dark"
-                enableSystem
-            >
-                <AuthProvider session={await getServerSession()}>
-                    <Navbar/>
-                    {children}
-                    <Footer/>
-                </AuthProvider>
-            </NextThemesProvider>
+            <NextIntlClientProvider messages={messages}>
+                <NextThemesProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    enableSystem
+                >
+                    <AuthProvider session={await getServerSession()}>
+                        <Navbar/>
+                        {children}
+                        <Footer/>
+                    </AuthProvider>
+                </NextThemesProvider>
+            </NextIntlClientProvider>
         </main>
         </body>
         </html>

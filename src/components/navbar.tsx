@@ -2,26 +2,28 @@
 
 import React from 'react'
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'
-import {FaXmark} from "react-icons/fa6";
-import {HiMenu} from "react-icons/hi";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 import ThemeButton from "@/components/themeToggle";
 import {twMerge} from "tailwind-merge";
 import {useSession} from "next-auth/react";
-import ProjectModal from "@/components/projectModal";
+import {Menu, X} from "lucide-react";
+import I18nSwitch from "@/components/i18nSwitch";
+import {useTranslations} from "next-intl";
 
 const navigation = [
-    {name: 'Home', href: '/'},
-    {name: 'Projects', href: '/projects'},
+    {name: 'home', href: '/'},
+    {name: 'career', href: '/career'},
 ]
 
 export default function Example() {
+    const t = useTranslations('Nav');
+
     const pathname = usePathname();
     const {data: session} = useSession();
 
     return (
-        <Disclosure as="nav" className="w-full outline outline-neutral-300 dark:outline-[#151518] outline-1">
+        <Disclosure as="nav" className="w-full sticky top-0 z-50 bg-background">
             {({open}) => (
                 <>
                     <div className="px-2 sm:px-6 lg:px-8 w-full">
@@ -31,9 +33,9 @@ export default function Example() {
                                     className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white focus:outline-none">
                                     <span className="absolute -inset-0.5"/>
                                     {open ? (
-                                        <FaXmark size={20}/>
+                                        <X size={20}/>
                                     ) : (
-                                        <HiMenu size={20}/>
+                                        <Menu size={20}/>
                                     )}
                                 </DisclosureButton>
                             </div>
@@ -53,15 +55,15 @@ export default function Example() {
                                                     'rounded-md px-3 py-2 text-sm font-medium transition-colors'
                                                 )}
                                             >
-                                                {item.name}
+                                                {t(item.name)}
                                             </Link>
                                         ))}
                                     </div>
                                 </div>
                             </div>
                             <div className='flex flex-row items-center gap-2'>
+                                <I18nSwitch/>
                                 <ThemeButton/>
-                                {session && <ProjectModal/>}
                             </div>
                         </div>
                     </div>
@@ -78,7 +80,7 @@ export default function Example() {
                                         'block rounded-md px-3 py-2 text-base font-medium'
                                     )}
                                 >
-                                    {item.name}
+                                    {t(item.name)}
                                 </DisclosureButton>
                             ))}
                         </div>

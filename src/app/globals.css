@@ -88,3 +88,7 @@
 .inner-element {
     transform: translateZ(20px);
 }
+
+.slide {
+    height: calc(100vh - 4rem);
+}
