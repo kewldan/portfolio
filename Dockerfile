@@ -12,7 +12,6 @@ COPY next.config.mjs .env postcss.config.mjs tailwind.config.ts tsconfig.json ./
 COPY ./public ./public
 COPY ./messages ./messages
 COPY ./src ./src
-COPY ./.env ./
 
 RUN npm run build
 
