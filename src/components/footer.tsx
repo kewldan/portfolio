@@ -1,47 +1,38 @@
 'use client';
 
 import React from "react";
-import {Button} from "./ui/button";
-import {signIn, signOut, useSession} from "next-auth/react";
 import {useTranslations} from "next-intl";
+import Image from "next/image";
+
+const socials = [
+    {href: '/telegram', icon: '/logos/telegram.svg'},
+    {href: '/vk', icon: '/logos/vk.svg'},
+    {href: '/github', icon: '/logos/github.svg'},
+    {href: '/npm', icon: '/logos/npm.svg'},
+    {href: '/stack-overflow', icon: '/logos/stack-overflow.svg'},
+    {href: '/x', icon: '/logos/x.svg'},
+]
 
 export default function Footer() {
     const t = useTranslations('Footer');
-    const {data: session} = useSession();
 
     return (
-        <footer className="w-full p-4 px-20 flex flex-row flex-wrap gap-2 items-center justify-between max-w-[120rem]">
-            <span className='dark:text-neutral-700'>
+        <footer className="w-full p-4 px-4 flex flex-col md:flex-row gap-2 items-center justify-between max-w-[120rem]">
+            <span className='text-muted-foreground w-full text-sm'>
                 {t('copyright')}
             </span>
-            <div className="flex flex-row items-center justify-center text-neutral-600 gap-x-4">
-                <a href="/telegram" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
-                    {/*<FaTelegram size={26}/>*/}
-                </a>
-                <a href="/github" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
-                    {/*<Github size={26}/>*/}
-                </a>
-                <a href="/stack-overflow" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
-                    {/*<FaStackOverflow size={26}/>*/}
-                </a>
-                <a href="/vk" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
-                    {/*<FaVk size={26}/>*/}
-                </a>
-                <a href="/npm" className='hover:text-gray-900 dark:hover:text-gray-300 transition-colors'>
-                    {/*<FaNpm size={26}/>*/}
-                </a>
+            <div className="flex flex-row items-center justify-center gap-x-2 w-full">
+                {
+                    socials.map(social => (
+                        <a href={social.href} key={social.href}>
+                            <Image src={social.icon} alt={social.icon} width={32} height={32} className="w-8 h-8"/>
+                        </a>
+                    ))
+                }
             </div>
-            {
-                session ? (
-                    <Button variant="link" onClick={() => signOut()}>
-                        {t('sign-out')}
-                    </Button>
-                ) : (
-                    <Button variant="link" onClick={() => signIn()}>
-                        {t('sign-in')}
-                    </Button>
-                )
-            }
+            <span className="w-full">
+
+            </span>
         </footer>
     )
 }

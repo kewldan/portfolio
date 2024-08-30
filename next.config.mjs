@@ -40,6 +40,11 @@ const nextConfig = {
                 source: "/npm",
                 destination: "https://www.npmjs.com/~kewldan",
                 permanent: true
+            },
+            {
+                source: "/x",
+                destination: "https://x.com/kewldanil",
+                permanent: true
             }
         ];
     },

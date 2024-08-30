@@ -26,7 +26,7 @@ export default function Hero() {
                     </span>
                 </div>
             </div>
-            <h1 className="-z-10 text-6xl font-extrabold select-none tracking-tight self-start lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background max-w-3xl">
+            <h1 className="-z-10 text-6xl font-extrabold break-all select-none tracking-tight self-start lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
                 {t('love')}
             </h1>
         </main>
