@@ -32,12 +32,17 @@ export default function Example() {
                     </SheetTrigger>
                     <SheetContent>
                         <SheetHeader>
-                            <SheetTitle>Are you absolutely sure?</SheetTitle>
-                            <SheetDescription>
-                                This action cannot be undone. This will permanently delete your account
-                                and remove your data from our servers.
-                            </SheetDescription>
+                            <SheetTitle></SheetTitle>
+                            <SheetDescription></SheetDescription>
                         </SheetHeader>
+                        <div className="flex flex-col items-start gap-4 text-md font-medium">
+                            {navigation.map(item => (
+                                <Link href={item.href} key={item.href}>
+                                    <span
+                                        className={cn(pathname !== item.href && "text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300")}>{t(item.name)}</span>
+                                </Link>
+                            ))}
+                        </div>
                     </SheetContent>
                 </Sheet>
                 <div className="flex gap-6 items-center">
