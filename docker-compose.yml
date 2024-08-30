@@ -2,6 +2,7 @@ services:
   web:
     build: .
     restart: unless-stopped
+    hostname: kewldan-portfolio-web
     expose:
       - 80
     networks:

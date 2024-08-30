@@ -41,8 +41,8 @@ export default function Example() {
                     </SheetContent>
                 </Sheet>
                 <div className="flex gap-6 items-center">
-                    <div className="text-xl font-bold">
-                        <span className="text-muted-foreground">dev://</span>
+                    <div className="text-xl font-bold space-x-0.5">
+                        <span className="text-muted-foreground font-medium">dev://</span>
                         <span>kewldan</span>
                     </div>
                     <div className="gap-4 text-md font-medium hidden sm:flex">
