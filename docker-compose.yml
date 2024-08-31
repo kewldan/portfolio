@@ -1,5 +1,5 @@
 services:
-  web:
+  kwldn-web:
     build: .
     restart: unless-stopped
     hostname: kewldan-portfolio-web
