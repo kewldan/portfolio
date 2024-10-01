@@ -34,7 +34,7 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-parallax-tilt": "^1.7.243",
+    "react-parallax-tilt": "^1.7.244",
     "react-syntax-highlighter": "^15.5.0",
     "react-yandex-metrika": "^2.6.0",
     "sharp": "^0.33.5",
