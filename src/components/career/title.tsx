@@ -4,7 +4,11 @@ import Image from "next/image";
 import React from "react";
 import {useTranslations} from "next-intl";
 
-export default function CareerTitle({anchor, name, opensource}: { anchor: string; name: string; opensource?: boolean }) {
+export default function CareerTitle({anchor, name, opensource}: {
+    anchor: string;
+    name: string;
+    opensource?: boolean
+}) {
     const t = useTranslations('Career');
 
     return (

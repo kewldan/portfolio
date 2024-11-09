@@ -36,9 +36,9 @@ export default async function RootLayout({
                     defaultTheme="dark"
                     enableSystem
                 >
-                        <Navbar/>
-                        {children}
-                        <Footer/>
+                    <Navbar/>
+                    {children}
+                    <Footer/>
                 </NextThemesProvider>
             </NextIntlClientProvider>
         </main>
