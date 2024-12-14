@@ -83,7 +83,7 @@ const config = {
                 {
                     'font-outline': (value) => {
                         return {
-                            "-webkit-text-stroke": `0.025em ${value || "#474757"}`
+                            "text-outline": `-1px -1px 0 ${value || "#474757"}, 1px -1px 0 ${value || "#474757"}, -1px 1px 0 ${value || "#474757"}, 1px 1px 0 ${value || "#474757"}`
                         }
                     },
                 },
