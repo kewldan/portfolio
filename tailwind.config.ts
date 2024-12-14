@@ -83,7 +83,7 @@ const config = {
                 {
                     'font-outline': (value) => {
                         return {
-                            "text-outline": `-1px -1px 0 ${value || "#474757"}, 1px -1px 0 ${value || "#474757"}, -1px 1px 0 ${value || "#474757"}, 1px 1px 0 ${value || "#474757"}`
+                            "text-shadow": `-1px -1px 0 ${value || "#474757"}, 1px -1px 0 ${value || "#474757"}, -1px 1px 0 ${value || "#474757"}, 1px 1px 0 ${value || "#474757"}`
                         }
                     },
                 },
