@@ -16,7 +16,7 @@ import {CareerSlotTitle} from "@/components/career/slotTitle";
 
 const anchor = "LogicalSystem"
 
-const used: Technology[] = ['git', 'opengl', 'clion', 'vcpkg', 'glfw', 'github', 'ubuntu', 'windows'];
+const used: Technology[] = ['git', 'clion', 'vcpkg'];
 
 export default function LogicalSystem() {
     const t = useTranslations('LogicalSystem');

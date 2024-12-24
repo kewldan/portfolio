@@ -80,6 +80,10 @@
     min-height: calc(100vh - 4rem);
 }
 
+.footer-screen-slide {
+    min-height: calc(100vh - 10rem);
+}
+
 .parallax-effect-img {
     transform-style: preserve-3d;
     transform: perspective(100px);

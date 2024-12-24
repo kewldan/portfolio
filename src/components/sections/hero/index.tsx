@@ -1,34 +1,44 @@
 import React from 'react';
 import PhotoGallery from "./photoGallery";
-import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 
+const birthDate = new Date('2008-01-09');
 
-export default function Hero() {
-    const t = useTranslations('Hero');
+function calculateAge(birthDate: Date): number {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+export default async function Hero() {
+    const t = await getTranslations('Hero');
+
+    const age = calculateAge(birthDate);
 
     return (
-        <main className='flex flex-col items-center justify-between gap-y-3 p-8 w-full relative screen-slide'>
-            <h1 className="-z-10 text-6xl font-extrabold select-none text-right tracking-tight self-end lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background max-w-3xl">
-                {t('passion')}
-            </h1>
+        <main className='flex flex-col items-center justify-center gap-y-3 p-8 w-full relative screen-slide'>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                 <PhotoGallery photos={[
                     '/photos/1.jpg',
                     '/photos/2.jpg',
                     '/photos/3.jpg',
                     '/photos/4.jpg',
-                ]} width={480} height={640}/>
+                    '/photos/5.jpg',
+                ]}/>
 
-                <div className="flex flex-col items-center grow">
+                <div className="flex flex-col items-center shrink-0">
                     <h1 className="text-3xl md:text-5xl font-medium">👋{t('hello')}</h1>
                     <span className="mt-10 text-md md:text-xl max-w-lg">
-                        {t('about')}
+                        {t('about', {age})}
                     </span>
                 </div>
             </div>
-            <h1 className="-z-10 text-6xl font-extrabold break-all select-none tracking-tight self-start lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background">
-                {t('love')}
-            </h1>
         </main>
     )
 }

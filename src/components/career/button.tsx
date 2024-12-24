@@ -16,12 +16,12 @@ export interface ButtonProps
 const CareerButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({className, href, icon, iconNeedInvert, name, ...props}, ref) => {
         return (
-            <Button className={cn('w-full', className)} asChild ref={ref} {...props}>
+            <Button className={cn('w-full max-w-xs', className)} variant="secondary" asChild ref={ref} {...props}>
                 <Link href={href}
                       className="w-full flex flex-row items-center justify-between">
                             <span className="w-full">
-                                {icon && <Image src={`/icons/stack/${icon}`} alt="Open Source" width={28} height={28}
-                                                className={cn("inline", iconNeedInvert && "invert dark:invert-0")}/>}
+                                {icon && <Image src={`/icons/stack/${icon}`} alt="Open Source" width={24} height={24}
+                                                className={cn("inline", iconNeedInvert && "invert-0 dark:invert")}/>}
                             </span>
                     {name}
                     <div className="w-full flex flex-row items-center justify-end">

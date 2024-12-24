@@ -18,11 +18,8 @@ const used: Technology[] = [
     'traefik',
     'aiogram',
     'git',
-    'github',
     'pycharm',
-    'cloudflare',
     'beanie',
-    'telegram'
 ]
 
 const anchor = "SolverBot";

@@ -34,11 +34,12 @@
   },
   "Nav": {
     "home": "Home",
-    "career": "Career"
+    "career": "Career",
+    "market": "Market"
   },
   "Hero": {
     "about": "My name is Daniil. I'm a 16 year-old developer from Saint-Petersburg, Russia. Today, I work as a indie developer. And focusing on my own projects and POCs",
-    "passion": "CODING IS MY PASSION",
+    "passion": "CODING IS MY LIFE",
     "love": "I LOVE PROGRAMMING",
     "hello": "Hi there!"
   },
@@ -48,14 +49,13 @@
     "soft-skills": "Communication,Teamwork,Problem-solving,Critical thinking,Leadership,Creativity",
     "soft-more": "And more!",
     "tech": "Tech Stack",
-    "hard-about": "Levels of knowledge of Programming languages",
-    "love": "MADE WITH LOVE&NEXT.JS"
+    "hard-about": "Levels of knowledge of Programming languages"
   },
   "Stats": {
     "title": "My stats"
   },
   "Footer": {
-    "copyright": "© 2023-2024 Daniil Tenishev. All rights reserved.",
+    "copyright": "© 2023-{year} Daniil Tenishev. All rights reserved.",
     "sign-in": "Login",
     "sign-out": "Sign out"
   }

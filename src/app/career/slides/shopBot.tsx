@@ -15,16 +15,11 @@ import {CareerSlotTitle} from "@/components/career/slotTitle";
 
 const used: Technology[] = [
     'git',
-    'github',
-    'ubuntu',
-    'windows',
     'aiogram',
     'pycharm',
     'beanie',
-    'cloudflare',
     'mongodb',
-    'docker',
-    'telegram'
+    'docker'
 ]
 
 const anchor = "FreeShopBot";

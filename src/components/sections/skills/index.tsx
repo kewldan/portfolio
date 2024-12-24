@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import {StackCard} from "./stackCard";
-import {useTranslations} from "next-intl";
-import {Progress} from "@/components/ui/progress";
 import {technologies, Technology} from "@/lib/technologies";
+import {getTranslations} from "next-intl/server";
 
 const languages = [
     {name: 'Python', icon: 'python.svg', value: 5},
@@ -13,40 +12,32 @@ const languages = [
     {name: 'Kotlin', icon: 'kotlin.svg', value: 1},
 ]
 
-export default function Skills() {
-    const t = useTranslations('Skills');
+export default async function Skills() {
+    const t = await getTranslations('Skills');
 
     return (
         <section
-            className='w-full min-h-[40rem] relative'>
-            <div className="p-4 grid grid-cols-1 xl:grid-cols-4">
-                <div className="p-4">
-                    <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+            className='w-full max-w-7xl relative'>
+            <div className="p-4 grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <div className="p-4 border rounded-2xl">
+                    <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
                         {t('hard')}
                     </h1>
-                    <h3 className="mt-8 text-2xl font-semibold tracking-tight">
-                        {t('hard-about')}
-                    </h3>
-                    <ul className="my-6 ml-6 list-disc [&>li]:mt-3">
+                    <ul className="my-6 ml-6 list-disc space-y-2">
                         {
                             languages.sort((a, b) => b.value - a.value).map(lang => (
                                 <li key={lang.name}>
-                                    <div className="flex flex-col items-center w-full gap-1">
-                                        <div className='flex flex-row items-center w-full gap-1 px-1'>
-                                            <Image src={`/icons/langs/${lang.icon}`} alt={`${lang.name} logo`}
-                                                   width={22}
-                                                   height={22}/>
-                                            <span>{lang.name}</span>
-                                        </div>
-                                        <Progress value={lang.value * 20} max={100}/>
-                                    </div>
+                                    <Image src={`/icons/langs/${lang.icon}`} alt={`${lang.name} logo`}
+                                           width={24}
+                                           height={24} className="w-6 h-6 inline ml-1"/>
+                                    <span className="ml-2 text-lg font-bold">{lang.name}</span>
                                 </li>
                             ))
                         }
                     </ul>
                 </div>
-                <div className="p-4 h-full">
-                    <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+                <div className="p-4 border rounded-2xl">
+                    <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
                         {t('soft')}
                     </h1>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
@@ -56,10 +47,9 @@ export default function Skills() {
                             ))
                         }
                     </ul>
-                    <span className='text-xs'>{t('soft-more')}</span>
                 </div>
-                <div className="p-4 xl:col-span-2 flex flex-col gap-8">
-                    <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+                <div className="p-4 xl:col-span-2 flex flex-col gap-8 border rounded-2xl">
+                    <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
                         {t('tech')}
                     </h1>
                     <div className="flex flex-row flex-wrap gap-4 justify-center">
@@ -71,9 +61,6 @@ export default function Skills() {
                     </div>
                 </div>
             </div>
-            <h1 className="-z-10 text-6xl font-extrabold bottom-4 left-4 tracking-tight lg:text-8xl font-outline-neutral-200 dark:font-outline-[#474757] text-background hidden lg:block select-none">
-                {t('love')}
-            </h1>
         </section>
     )
 }
