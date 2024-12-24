@@ -46,7 +46,7 @@ export default async function LogicalSystem() {
             </CareerSlot>
             <CareerSlot>
                 <Image src="/projects/LogicalSystem.gif" alt="Project" width={900}
-                       height={900} className="object-fill rounded-xl"/>
+                       height={900} className="object-fill rounded-xl" unoptimized/>
             </CareerSlot>
             <CareerSlot>
                 <div className="w-full max-w-xl flex flex-col items-center gap-4">

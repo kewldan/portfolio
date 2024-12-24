@@ -8,7 +8,8 @@ import NavbarLink, {NavItem} from "@/components/navbar-link";
 
 const navigation: NavItem[] = [
     {name: 'home', href: '/'},
-    {name: 'career', href: '/career'},
+    {name: 'indie', href: '/indie'},
+    {name: 'business', href: '/business'},
     {name: 'market', href: '/market'},
 ]
 

@@ -1,7 +1,7 @@
 import React from "react";
-import LogicalSystem from "@/app/career/slides/logicalSystem";
-import ShopBot from "@/app/career/slides/shopBot";
-import SolverBot from "@/app/career/slides/solverBot";
+import LogicalSystem from "@/app/indie/slides/logicalSystem";
+import ShopBot from "@/app/indie/slides/shopBot";
+import SolverBot from "@/app/indie/slides/solverBot";
 
 export default async function Projects() {
     return (

@@ -34,7 +34,8 @@
   },
   "Nav": {
     "home": "Home",
-    "career": "Career",
+    "indie": "Indie",
+    "business": "Business",
     "market": "Market"
   },
   "Hero": {
@@ -58,5 +59,9 @@
     "copyright": "© 2023-{year} Daniil Tenishev. All rights reserved.",
     "sign-in": "Login",
     "sign-out": "Sign out"
+  },
+  "NotFound": {
+    "details": "Page not found, are you lost?",
+    "back": "Go back"
   }
 }

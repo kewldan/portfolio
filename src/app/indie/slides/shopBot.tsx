@@ -41,7 +41,7 @@ export default async function ShopBot() {
             </CareerSlot>
             <CareerSlot>
                 <Image src="/projects/ShopBot.gif" alt="Project" width={400}
-                       height={400} className="object-fill rounded-md"/>
+                       height={400} className="object-fill rounded-md" unoptimized/>
             </CareerSlot>
             <CareerSlot>
                 <div className="w-full max-w-xl flex flex-col items-center justify-between h-full gap-4">
