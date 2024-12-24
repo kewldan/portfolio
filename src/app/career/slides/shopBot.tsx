@@ -1,5 +1,4 @@
 import React from "react";
-import {useTranslations} from "next-intl";
 import {StackCard} from "@/components/sections/skills/stackCard";
 import Image from "next/image";
 import {CheckCircle} from "lucide-react";
@@ -12,6 +11,8 @@ import CareerDate from "@/components/career/date";
 import {CareerSlot} from "@/components/career/slot";
 import CareerTemplate from "@/components/career/template";
 import {CareerSlotTitle} from "@/components/career/slotTitle";
+import {getTranslations} from "next-intl/server";
+import {FaGithub, FaTelegram} from "react-icons/fa6";
 
 const used: Technology[] = [
     'git',
@@ -24,8 +25,8 @@ const used: Technology[] = [
 
 const anchor = "FreeShopBot";
 
-export default function ShopBot() {
-    const t = useTranslations('ShopBot');
+export default async function ShopBot() {
+    const t = await getTranslations('ShopBot');
 
     return (
         <CareerTemplate anchor={anchor}>
@@ -45,7 +46,7 @@ export default function ShopBot() {
                     </CareerDate>
                 </div>
                 <div className="w-full max-w-xl grid grid-cols-1 gap-2">
-                    <CareerButton href="https://t.me/FreeShopPain_Bot" name="Telegram" icon="telegram.svg"
+                    <CareerButton href="https://t.me/FreeShopPain_Bot" name="Telegram" icon={<FaTelegram size={24}/>}
                                   iconNeedInvert={true}/>
                 </div>
             </CareerSlot>

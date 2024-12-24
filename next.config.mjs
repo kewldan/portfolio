@@ -45,6 +45,11 @@ const nextConfig = {
                 source: "/x",
                 destination: "https://x.com/kewldanil",
                 permanent: true
+            },
+            {
+                source: "/linked-in",
+                destination: "https://www.linkedin.com/in/kewldan/",
+                permanent: true
             }
         ];
     },

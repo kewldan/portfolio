@@ -1,8 +1,8 @@
 import React from "react";
-import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 
-export default function Stats() {
-    const t = useTranslations('Stats');
+export default async function Stats() {
+    const t = await getTranslations('Stats');
 
     return (
         <section className='outline-neutral-700 flex flex-col items-center p-8 justify-between w-full max-w-7xl gap-4'>

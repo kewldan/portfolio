@@ -1,5 +1,4 @@
 import React from "react";
-import {useTranslations} from "next-intl";
 import {StackCard} from "@/components/sections/skills/stackCard";
 import {YouTubeEmbed} from '@next/third-parties/google'
 import Image from "next/image";
@@ -13,13 +12,15 @@ import CareerDescription from "@/components/career/description";
 import CareerDate from "@/components/career/date";
 import {CareerSlot} from "@/components/career/slot";
 import {CareerSlotTitle} from "@/components/career/slotTitle";
+import {getTranslations} from "next-intl/server";
+import {FaGithub, FaItchIo} from "react-icons/fa6";
 
 const anchor = "LogicalSystem"
 
 const used: Technology[] = ['git', 'clion', 'vcpkg'];
 
-export default function LogicalSystem() {
-    const t = useTranslations('LogicalSystem');
+export default async function LogicalSystem() {
+    const t = await getTranslations('LogicalSystem');
 
     return (
         <CareerTemplate anchor={anchor}>
@@ -42,8 +43,8 @@ export default function LogicalSystem() {
                 </div>
                 <div className="w-full max-w-xl grid grid-cols-2 gap-2">
                     <CareerButton href="https://github.com/kewldan/LogicalSystemRemaster" name="Github"
-                                  icon="github.svg" iconNeedInvert={true}/>
-                    <CareerButton href="https://kewldan.itch.io/logical-system" name="Itch" icon="itch.svg"
+                                  icon={<FaGithub size={24}/>} iconNeedInvert={true}/>
+                    <CareerButton href="https://kewldan.itch.io/logical-system" name="Itch" icon={<FaItchIo size={24}/>}
                                   iconNeedInvert={true}/>
                 </div>
             </CareerSlot>

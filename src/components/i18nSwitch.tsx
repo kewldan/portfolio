@@ -5,12 +5,12 @@ import React, {useTransition} from "react";
 import {Languages} from "lucide-react";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 import {setUserLocale} from "@/locales";
-import {Locale} from "@/config";
 import {useTranslations} from "next-intl";
+import {Locale} from "@/i18n/config";
 
 export default function I18nSwitch() {
     const t = useTranslations('Locales');
-    const [isPending, startTransition] = useTransition();
+    const [_, startTransition] = useTransition();
 
     function onChange(value: string) {
         const locale = value as Locale;

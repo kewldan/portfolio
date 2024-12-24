@@ -1,8 +1,6 @@
-'use client';
-
 import React, {ReactNode} from "react";
-import {useTranslations} from "next-intl";
-import {FaGithub, FaNpm, FaStackOverflow, FaTelegram, FaTwitter, FaVk} from "react-icons/fa6";
+import {FaGithub, FaLinkedin, FaNpm, FaStackOverflow, FaTelegram, FaTwitter, FaVk} from "react-icons/fa6";
+import {getTranslations} from "next-intl/server";
 
 const socials: { href: string; icon: ReactNode }[] = [
     {href: '/telegram', icon: <FaTelegram size={24}/>},
@@ -11,10 +9,11 @@ const socials: { href: string; icon: ReactNode }[] = [
     {href: '/npm', icon: <FaNpm size={24}/>},
     {href: '/stack-overflow', icon: <FaStackOverflow size={24}/>},
     {href: '/x', icon: <FaTwitter size={24}/>},
+    {href: '/linked-in', icon: <FaLinkedin size={24}/>},
 ]
 
-export default function Footer() {
-    const t = useTranslations('Footer');
+export default async function Footer() {
+    const t = await getTranslations('Footer');
 
     return (
         <footer
