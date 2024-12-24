@@ -40,17 +40,19 @@ export default async function SolverBot() {
                 </div>
             </CareerSlot>
             <CareerSlot>
-                <Image src="https://cdn.kyl-team.ru/projects/SolverBot.gif" alt="Project" width={400}
+                <Image src="/projects/SolverBot.gif" alt="Project" width={400}
                        height={400} className="object-fill rounded-md"/>
             </CareerSlot>
             <CareerSlot>
-                <div className="w-full max-w-xl flex flex-col items-center gap-4">
+                <div className="w-full max-w-xl flex flex-col items-center justify-between h-full gap-4">
                     <CareerSlotTitle>
                         {t("solutions")}
                     </CareerSlotTitle>
-                    <CareerList items={[
-                        t("hierarchy")
-                    ]}/>
+                    <div className="h-full justify-center items-center flex">
+                        <CareerList items={[
+                            t("hierarchy")
+                        ]}/>
+                    </div>
                 </div>
             </CareerSlot>
         </CareerTemplate>

@@ -45,8 +45,8 @@ export default async function LogicalSystem() {
                 </div>
             </CareerSlot>
             <CareerSlot>
-                <Image src="https://cdn.kyl-team.ru/projects/125910-LogicalSystem.gif" alt="Project" width={800}
-                       height={400} className="object-fill rounded-md"/>
+                <Image src="/projects/LogicalSystem.gif" alt="Project" width={900}
+                       height={900} className="object-fill rounded-xl"/>
             </CareerSlot>
             <CareerSlot>
                 <div className="w-full max-w-xl flex flex-col items-center gap-4">
