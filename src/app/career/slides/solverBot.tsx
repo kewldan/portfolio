@@ -1,27 +1,16 @@
 import React from "react";
-import {StackCard} from "@/components/sections/skills/stackCard";
 import Image from "next/image";
 import {CheckCircle} from "lucide-react";
 import CareerTitle from "@/components/career/title";
 import CareerDescription from "@/components/career/description";
 import {CareerButton} from "@/components/career/button";
-import {technologies, Technology} from "@/lib/technologies";
 import CareerList from "@/components/career/list";
 import CareerDate from "@/components/career/date";
 import {CareerSlot} from "@/components/career/slot";
 import CareerTemplate from "@/components/career/template";
 import {CareerSlotTitle} from "@/components/career/slotTitle";
 import {getTranslations} from "next-intl/server";
-import {FaGithub, FaTelegram} from "react-icons/fa6";
-
-const used: Technology[] = [
-    'docker',
-    'traefik',
-    'aiogram',
-    'git',
-    'pycharm',
-    'beanie',
-]
+import {FaTelegram} from "react-icons/fa6"
 
 const anchor = "SolverBot";
 
@@ -62,18 +51,6 @@ export default async function SolverBot() {
                     <CareerList items={[
                         t("hierarchy")
                     ]}/>
-                </div>
-            </CareerSlot>
-            <CareerSlot>
-                <CareerSlotTitle>
-                    {t('tech')}
-                </CareerSlotTitle>
-                <div className="flex flex-row flex-wrap gap-4 justify-center max-w-2xl">
-                    {
-                        used.map(k => technologies[k]).sort((a, b) => a.type.localeCompare(b.type)).map(item => (
-                            <StackCard item={item} key={item.name}/>
-                        ))
-                    }
                 </div>
             </CareerSlot>
         </CareerTemplate>

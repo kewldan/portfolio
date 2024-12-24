@@ -6,7 +6,6 @@ export type Technology =
     | 'clion'
     | 'docker'
     | 'fastapi'
-    | 'git'
     | 'intellij'
     | 'mongodb'
     | 'nextjs'
@@ -25,7 +24,6 @@ export const technologies: Record<Technology, StackCardItem> = {
     clion: {type: 'ide', name: 'CLion', icon: 'clion.svg'},
     docker: {type: 'software', name: 'Docker', icon: 'docker.svg'},
     fastapi: {type: 'framework', name: 'FastAPI', icon: 'fastapi.svg'},
-    git: {type: 'software', name: 'Git', icon: 'git.svg'},
     intellij: {type: 'ide', name: 'Intellij', icon: 'intellij.svg'},
     mongodb: {type: 'db', name: 'MongoDB', icon: 'mongodb.svg'},
     nextjs: {type: 'framework', name: 'NextJS', icon: 'nextjs.svg', needToInvert: true},

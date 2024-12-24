@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
-import Image from "next/image";
 import React from "react";
 import {getTranslations} from "next-intl/server";
+import {FaGithub} from "react-icons/fa6";
 
 export default async function CareerTitle({anchor, name, opensource}: {
     anchor: string;
@@ -21,11 +21,10 @@ export default async function CareerTitle({anchor, name, opensource}: {
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
-                                <Image src="/icons/stack/github.svg" alt="Open Source" width={32} height={32}
-                                       className="dark:invert pb-2"/>
+                                <FaGithub size={24}/>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>{t('osi')}</p>
+                                {t('osi')}
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>

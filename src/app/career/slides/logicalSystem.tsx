@@ -1,11 +1,9 @@
 import React from "react";
-import {StackCard} from "@/components/sections/skills/stackCard";
 import {YouTubeEmbed} from '@next/third-parties/google'
 import Image from "next/image";
 import {CheckCircle} from "lucide-react";
 import CareerTemplate from "@/components/career/template";
 import CareerTitle from "@/components/career/title";
-import {technologies, Technology} from "@/lib/technologies";
 import CareerList from "@/components/career/list";
 import {CareerButton} from "@/components/career/button";
 import CareerDescription from "@/components/career/description";
@@ -16,8 +14,6 @@ import {getTranslations} from "next-intl/server";
 import {FaGithub, FaItchIo} from "react-icons/fa6";
 
 const anchor = "LogicalSystem"
-
-const used: Technology[] = ['git', 'clion', 'vcpkg'];
 
 export default async function LogicalSystem() {
     const t = await getTranslations('LogicalSystem');
@@ -60,18 +56,6 @@ export default async function LogicalSystem() {
                     <div className='w-full p-2'>
                         <YouTubeEmbed videoid="q_ve9SsuyvU" height={300} params="start=1547"/>
                     </div>
-                </div>
-            </CareerSlot>
-            <CareerSlot>
-                <CareerSlotTitle>
-                    {t('tech')}
-                </CareerSlotTitle>
-                <div className="flex flex-row flex-wrap gap-4 justify-center max-w-2xl">
-                    {
-                        used.map(k => technologies[k]).sort((a, b) => a.type.localeCompare(b.type)).map(item => (
-                            <StackCard item={item} key={item.name}/>
-                        ))
-                    }
                 </div>
             </CareerSlot>
         </CareerTemplate>
