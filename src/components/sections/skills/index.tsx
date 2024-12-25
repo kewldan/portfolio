@@ -18,7 +18,7 @@ export default async function Skills() {
     return (
         <section
             className='w-full max-w-7xl relative'>
-            <div className="p-4 grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 border rounded-2xl">
                     <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
                         {t('hard')}
@@ -48,7 +48,7 @@ export default async function Skills() {
                         }
                     </ul>
                 </div>
-                <div className="p-4 xl:col-span-2 flex flex-col gap-8 border rounded-2xl">
+                <div className="p-4 xl:col-span-2 flex flex-col gap-8 border rounded-2xl md:col-span-2">
                     <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
                         {t('tech')}
                     </h1>

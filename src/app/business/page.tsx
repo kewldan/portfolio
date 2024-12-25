@@ -1,7 +1,11 @@
-export default function BusinessPage() {
+import {getTranslations} from "next-intl/server";
+
+export default async function BusinessPage() {
+    const t = await getTranslations('NotFound');
+
     return (
         <main className="flex items-center footer-screen-slide justify-center text-5xl font-black">
-            Упс...
+            {t('ops')}
         </main>
     )
 }

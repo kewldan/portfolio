@@ -15,13 +15,14 @@ export default function PhotoGallery({photos}: {
 }): React.ReactNode {
     return (
         <div className="flex flex-col items-center gap-0.5">
-            <Carousel className="w-[32rem]" opts={{align: "center", loop: true}}
+            <Carousel className="w-[20rem] h-[20rem] sm:w-[24rem] sm:h-[24rem] xl:w-[32rem] xl:h-[32rem]"
+                      opts={{align: "center", loop: true}}
                       plugins={[Autoplay({delay: 5000, stopOnInteraction: true})]}>
                 <CarouselContent>
                     {photos.map((photo, index) => (
                         <CarouselItem key={`${photo}-${index}`}>
                             <Image src={photo} alt={photo} width={640} height={640}
-                                   className='object-cover rounded-xl w-[32rem] h-[32rem]'/>
+                                   className='object-cover rounded-xl w-[20rem] h-[20rem] sm:w-[24rem] sm:h-[24rem] xl:w-[32rem] xl:h-[32rem]'/>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

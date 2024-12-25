@@ -22,8 +22,8 @@ export default async function Hero() {
     const age = calculateAge(birthDate);
 
     return (
-        <main className='flex flex-col items-center justify-center gap-y-3 p-8 w-full relative screen-slide'>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+        <main className='flex flex-col items-center justify-center gap-y-3 p-8 w-full relative screen-slide px-6'>
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
                 <PhotoGallery photos={[
                     '/photos/1.jpg',
                     '/photos/2.jpg',
@@ -34,7 +34,7 @@ export default async function Hero() {
 
                 <div className="flex flex-col items-center shrink-0">
                     <h1 className="text-3xl md:text-5xl font-medium">👋{t('hello')}</h1>
-                    <span className="mt-10 text-md md:text-xl max-w-lg">
+                    <span className="mt-10 text-md md:text-xl max-w-lg text-center lg:text-start">
                         {t('about', {age})}
                     </span>
                 </div>

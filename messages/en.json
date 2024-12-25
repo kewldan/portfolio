@@ -7,7 +7,6 @@
     "details": "I took the project for the final project activity in 2024 for grade 9 and successfully passed it",
     "now": "The project requires improvement on the optimization and engine side. At the moment the project is abandoned",
     "mention": "Mentioned in YouTube video",
-    "tech": "Technologies",
     "about": "In this game, you can create any electrical circuits. This game is Turing complete. I was able to create a full 8 bit gated adder in half an hour! The field of play is endless, there are many logical elements in the game, such as AND, XOR, OR, NOT and more."
   },
   "ShopBot": {
@@ -15,7 +14,6 @@
     "details": "The project was commissioned by an acquaintance and successfully delivered on time well ahead of schedule",
     "now": "The project is hosted on my infrastructure and also supported",
     "solutions": "Solutions",
-    "tech": "Technologies",
     "hierarchy": "Created a hierarchical database, with items that have a unique ID",
     "about": "The Telegram bot is divided into 2 parts: management, where all the controls are located, and client side, where the purchase interface is written"
   },
@@ -25,7 +23,6 @@
     "now": "Waiting for the new school year 2024/2025",
     "solutions": "Solutions Used",
     "hierarchy": "Created a database of all service tasks (More than 400k)",
-    "tech": "Technologies",
     "about": "The bot receives all tasks from any variant (task list) on the service, and then sends back solutions and answers to all tasks"
   },
   "Locales": {
@@ -40,15 +37,12 @@
   },
   "Hero": {
     "about": "My name is Daniil. I'm a 16 year-old developer from Saint-Petersburg, Russia. Today, I work as a indie developer. And focusing on my own projects and POCs",
-    "passion": "CODING IS MY LIFE",
-    "love": "I LOVE PROGRAMMING",
     "hello": "Hi there!"
   },
   "Skills": {
     "hard": "Hard Skills",
     "soft": "Soft Skills",
     "soft-skills": "Communication,Teamwork,Problem-solving,Critical thinking,Leadership,Creativity",
-    "soft-more": "And more!",
     "tech": "Tech Stack",
     "hard-about": "Levels of knowledge of Programming languages"
   },
@@ -56,12 +50,15 @@
     "title": "My stats"
   },
   "Footer": {
-    "copyright": "© 2023-{year} Daniil Tenishev. All rights reserved.",
-    "sign-in": "Login",
-    "sign-out": "Sign out"
+    "copyright": "© 2023-{year} Daniil Tenishev. All rights reserved."
   },
   "NotFound": {
     "details": "Page not found, are you lost?",
-    "back": "Go back"
+    "back": "Go back",
+    "ops": "Oops..."
+  },
+  "Donate": {
+    "crypto": "Crypto",
+    "fiat": "Fiat"
   }
 }

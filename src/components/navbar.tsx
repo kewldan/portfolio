@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className="flex justify-between items-center h-full max-w-7xl w-full py-4 px-4">
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button className="shrink-0 flex sm:hidden" size="icon" variant="outline">
+                        <Button className="shrink-0 flex sm:hidden mr-4" size="icon" variant="outline">
                             <Menu/>
                         </Button>
                     </SheetTrigger>

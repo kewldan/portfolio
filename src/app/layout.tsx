@@ -9,6 +9,7 @@ import {twMerge} from "tailwind-merge";
 import Footer from "@/components/footer";
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale, getMessages} from "next-intl/server";
+import {Toaster} from "@/components/ui/sonner";
 
 const inter = Inter({subsets: ['latin', 'cyrillic'], display: 'fallback'})
 
@@ -26,7 +27,7 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} suppressHydrationWarning className="scroll-smooth">
+        <html lang={locale} suppressHydrationWarning>
         <body
             className={twMerge(`bg-white dark:bg-[#09090b] overflow-x-hidden antialiased font-medium font-sans`, inter.className)}>
         <main className='min-h-screen flex flex-col items-center w-full justify-between'>
@@ -39,6 +40,7 @@ export default async function RootLayout({
                     <Navbar/>
                     {children}
                     <Footer/>
+                    <Toaster/>
                 </NextThemesProvider>
             </NextIntlClientProvider>
         </main>
