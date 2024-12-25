@@ -53,6 +53,20 @@ const nextConfig = {
             }
         ];
     },
+    async headers() {
+        return [
+            {
+                source: '/:all*(svg|jpg|png|gif|json)',
+                locale: false,
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=604800, must-revalidate',
+                    }
+                ],
+            },
+        ]
+    },
 }
 
 export default withNextIntl(nextConfig);
