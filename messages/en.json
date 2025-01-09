@@ -36,7 +36,7 @@
     "market": "Market"
   },
   "Hero": {
-    "about": "My name is Daniil. I'm a 16 year-old developer from Saint-Petersburg, Russia. Today, I work as a indie developer. And focusing on my own projects and POCs",
+    "about": "My name is Daniil. I'm a {age} year-old developer from Saint-Petersburg, Russia. Today, I work as a indie developer. And focusing on my own projects and POCs",
     "hello": "Hi there!"
   },
   "Skills": {
