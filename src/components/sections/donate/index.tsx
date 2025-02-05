@@ -8,11 +8,10 @@ type Wallet = {
 }
 
 const wallets: Wallet[] = [
-    {currency: 'USDT TRC20', address: 'TEwsFUvUFZue46GX29ZveCnor432eaQR59'},
-    {currency: 'USDT ERC20', address: '0xfbcbaa9e63e9e86d95d27462cbed8ce146e9e0b0'},
-    {currency: 'USDT BEP20', address: '0xeb8d98d0cce077343cfb357486e558b1ac1b5060'},
-    {currency: 'USDT TON', address: 'UQAfS4nVeyhY74XUhu_ZyJkPOqff_MIZ5VKJSPSEg5kGyd7G'},
-    {currency: 'USDT SOL', address: '8N19xwjBYpzQ11gWXx9hYJUZxCyGXpW2VUKKX4Uwxgyq'},
+    {currency: 'TRON', address: 'TPvdY1z8k9pPeAprii7SUtQ2KUotUcUs7N'},
+    {currency: 'ETH/BSC', address: '0xaE03357CB8a416c91b3Ddfa63cB44a8E00dd0596'},
+    {currency: 'TON', address: 'UQA_747mRW3vNQlW8AQISOO3J5UJJXcASRoLpS0rK7UnOFfJ'},
+    {currency: 'BTC', address: 'bc1qxeggd3wf75pklztkkued6rq972txdph76y3zkq'},
 ]
 
 export default async function Donate() {
@@ -29,7 +28,7 @@ export default async function Donate() {
                         <div key={wallet.currency} className="space-x-2">
                             <span>{wallet.currency}</span>
                             <CopyText value={wallet.address}
-                                      className="text-sm font-normal">{wallet.address}</CopyText>
+                                      className="text-sm font-normal break-words">{wallet.address}</CopyText>
                         </div>
                     ))}
                 </div>
