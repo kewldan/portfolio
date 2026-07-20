@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 kewldan — Portfolio
 
-## Getting Started
+> Personal portfolio of an indie developer, live at [kewldan.ru](https://kewldan.ru).
 
-First, run the development server:
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=flat&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![next-intl](https://img.shields.io/badge/next--intl-3-5FC3E7?style=flat)
+
+## ✨ Features
+
+- 🌍 **i18n** — English and Russian via `next-intl`, cookie-based locale with an in-page switcher
+- 🌗 **Themes** — light / dark mode with `next-themes`
+- 🎞 **Animations** — Framer Motion transitions, parallax tilt cards, autoplaying Embla carousels
+- 🧩 **Sections** — hero, skills, donate and stats on the home page, plus dedicated `/business`, `/indie` and `/market` pages
+- 🔗 **Short links** — built-in redirects: `/github`, `/telegram`, `/vk`, `/npm`, `/x`, `/linked-in`, `/stack-overflow`
+- 📈 **Analytics** — Yandex Metrika integration
+- 🐳 **Docker-ready** — single-command deploy behind Traefik
+
+## 🛠 Tech stack
+
+- **Framework:** Next.js 15 (App Router), React 19, TypeScript
+- **Styling:** Tailwind CSS 3, Radix UI primitives, `class-variance-authority`, `tailwindcss-animate`
+- **UX:** Framer Motion, Embla Carousel, `react-parallax-tilt`, Sonner toasts, Lucide + React Icons
+- **i18n:** next-intl 3 (messages in `messages/en.json` / `messages/ru.json`)
+- **Infra:** Docker, Docker Compose, Traefik labels
+
+## 🚀 Getting started
+
+The project uses **npm** (`package-lock.json`):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production build:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start    # next start -p 80
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+No environment variables are required.
 
-## Learn More
+### Docker
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+docker compose up -d --build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The compose file expects an external `virtual-hosts` network with Traefik routing `kewldan.ru` to the container.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📂 Project structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+├── messages/          # en.json / ru.json translations
+├── src/
+│   ├── app/           # pages: /, /business, /indie, /market
+│   ├── components/
+│   │   ├── sections/  # hero, skills, donate, stats
+│   │   └── ui/        # shared UI primitives
+│   ├── i18n/          # next-intl config
+│   └── lib/           # technologies list, utils
+├── Dockerfile
+└── docker-compose.yml
+```
